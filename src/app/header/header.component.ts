@@ -1,5 +1,4 @@
 import {Component, ViewChild} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
 import { AppComponent} from '../app.component';
 
 @Component({

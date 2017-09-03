@@ -9,7 +9,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {DropdownModule} from 'ngx-dropdown';
 import {Form, FormsModule} from '@angular/forms';
 import {LoginComponent} from './LoginPage/loginpage.component';
-import {LoginPageComponent} from './LoginPage/login/loginpage.component';
+import {LoginPageComponent} from './LoginPage/login/login.component';
 import {RegisterComponent} from "./LoginPage/RegisterPage/register.component";
 
 

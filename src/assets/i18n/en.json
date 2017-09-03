@@ -10,5 +10,7 @@
   "inpsearche":"start enter request...",
   "REGISTER":"Ragistration",
   "LOGIN":"Login",
-  "REMEMBER_ME":"Remember me"
+  "REMEMBER_ME":"Remember me",
+  "email": "Email",
+  "password": "Password"
 }
