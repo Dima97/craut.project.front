@@ -12,5 +12,6 @@
   "LOGIN":"Login",
   "REMEMBER_ME":"Remember me",
   "email": "Email",
-  "password": "Password"
+  "password": "Password",
+  "Close":"Close"
 }

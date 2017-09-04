@@ -2,7 +2,8 @@ import {animate, Component, state, style, transition, trigger} from '@angular/co
 import { Router } from '@angular/router';
 import {User} from '../../../model/user';
 import {UserService} from '../../../service/userService';
-import {AuthentioficationService} from '../../../service/AuthentificationService';
+import {AuthenticationService} from '../../../service/AuthentificationService';
+import {Http} from "@angular/http";
 
 
 declare var $: any;
@@ -23,9 +24,9 @@ export class LoginPageComponent {
   error: string;
   protected user: User = new User();
 
-  constructor(private authenticationService: AuthentioficationService) {
-    this.error = null;
-    this.loading = false;
+  constructor(private authenticationService: AuthenticationService,
+              private userService: UserService) {
+
   }
   checkLogin() {}
   checkPassword() {}

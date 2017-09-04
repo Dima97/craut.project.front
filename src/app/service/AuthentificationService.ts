@@ -6,11 +6,11 @@ import {Http, Response} from '@angular/http';
 
 
 @Injectable()
-export class AuthentioficationService extends CoreService{
+export class AuthenticationService extends CoreService {
   public token: string;
   constructor(private http: Http) {
     super();
-    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
   }
   login (email: string, password: string): Observable<boolean> {

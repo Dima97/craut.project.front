@@ -2,10 +2,10 @@ import { Injectable} from '@angular/core';
 import {CoreService} from './coreService';
 import {User} from '../model/user';
 import {Response, Headers, Http, RequestOptions} from '@angular/http';
-import {AuthentioficationService} from './AuthentificationService';
+import {AuthenticationService} from './AuthentificationService';
 import {Observable} from 'rxjs/Observable';
 import { AuthHttp } from 'angular2-jwt';
-// import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/map';
 
 
 
@@ -15,7 +15,7 @@ export class UserService extends CoreService {
   constructor(
     private http: Http,
     private authHttp: AuthHttp,
-    private authentificationService: AuthentioficationService) {
+    private authentificationService: AuthenticationService) {
     super();
   }
   getUsers(): Observable<User[]> {

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 import {delay} from 'rxjs/operator/delay';
 
-declare var $:any;
+declare var $: any;
 @Injectable()
 export class AuthGuard implements CanActivate {
 
@@ -10,7 +10,6 @@ export class AuthGuard implements CanActivate {
 
   canActivate() {
     if (localStorage.getItem('currentUser')) {
-      // logged in so return true
       return true;
     }
     $('#login-button-header').click();
@@ -19,7 +18,6 @@ export class AuthGuard implements CanActivate {
 
   isActivate() {
     if (localStorage.getItem('currentUser')) {
-      // logged in so return true
       return true;
     }
     return false;
