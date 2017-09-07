@@ -8,6 +8,7 @@ import {AuthGuard} from '../../service/guards/auth.guards';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  mode: Boolean = false;
   constructor(public appComponent: AppComponent) {}
   switchLanguage(language: string) {
     this.appComponent.changeLanguage(language);

@@ -6,11 +6,11 @@ import {AuthenticationService} from '../../../service/AuthentificationService';
 import {Http} from "@angular/http";
 
 
-declare var $: any;
+declare let $: any;
 @Component({
   selector: 'app-login-page',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './loginpage.component.html',
+  styleUrls: ['./loginpage.component.css']
 })
 export class LoginPageComponent {
   isLoginCorrect = false;
@@ -24,8 +24,7 @@ export class LoginPageComponent {
   error: string;
   protected user: User = new User();
 
-  constructor(private authenticationService: AuthenticationService,
-              private userService: UserService) {
+  constructor(private authenticationService: AuthenticationService) {
 
   }
   checkLogin() {}

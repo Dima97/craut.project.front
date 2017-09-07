@@ -9,8 +9,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {DropdownModule} from 'ngx-dropdown';
 import {Form, FormsModule} from '@angular/forms';
-import {LoginComponent} from './LoginPage/loginpage.component';
-import {LoginPageComponent} from './LoginPage/login/login.component';
+import {LoginComponent} from './LoginPage/login.component';
+import {LoginPageComponent} from './LoginPage/login/loginpage.component';
 import {RegisterComponent} from './LoginPage/RegisterPage/register.component';
 import {AuthHttp} from 'angular2-jwt';
 import {Http, RequestOptions} from '@angular/http';
@@ -18,6 +18,9 @@ import {UserService} from '../service/userService';
 import {AuthGuard} from '../service/guards/auth.guards';
 import {AuthenticationService} from '../service/AuthentificationService';
 import {authHttpUserFactory} from '../../authUserFactory';
+import {routing} from "./app.routing";
+// import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import {CommonModule} from "@angular/common";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -36,8 +39,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     DropdownModule,
     FormsModule,
+    CommonModule,
+    // routing,
     HttpModule,
+    // DndModule.forRoot(),
     HttpClientModule,
+    // BootstrapModalModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

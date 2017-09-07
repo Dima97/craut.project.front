@@ -13,5 +13,10 @@
   "REMEMBER_ME":"Remember me",
   "email": "Email",
   "password": "Password",
-  "Close":"Close"
+  "Close":"Close",
+  "FirstName":"First name",
+  "LastName": "Last name",
+  "Nick": "Nick name",
+  "confirmPassword": "confirm password",
+  "FORGOTPASS":"Forgot password"
 }

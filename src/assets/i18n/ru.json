@@ -13,5 +13,10 @@
   "REMEMBER_ME":"Запомнить меня",
   "email": "Адрес электронной почты",
   "password": "Праоль",
-  "Close":"Закрыть"
+  "Close":"Закрыть",
+  "FirstName":"Имя",
+  "LastName": "Фамилия",
+  "Nick": "Ник",
+  "confirmPassword": "подтверждение пароля",
+  "FORGOTPASS":"Забыли пароль"
 }
