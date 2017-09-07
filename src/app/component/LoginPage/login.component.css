@@ -19,6 +19,12 @@
 .panel-login>.panel-heading a.active{
   color: #59B2E0;
   font-size: 18px;
+  outline: none;
+}
+.panel-login>.panel-heading a:active{
+  color: #59B2E0;
+  font-size: 18px;
+  outline: none;
 }
 .panel-login>.panel-heading hr{
   margin-top: 10px;
@@ -110,7 +116,7 @@
   transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
-  z-index: 100505;
+  z-index: 1050;
 }
 
 .modal header, .modal footer {
@@ -129,7 +135,7 @@
 }
 .modal section, .modal header, .modal footer {
   padding: 15px;
-  z-index: 100505;
+  z-index: 1050;
 }
 .modal h2 {
   margin: 0;
@@ -177,7 +183,4 @@ a.button18:focus:hover {
   border-top: 1px solid rgb(49,87,107);
   background-image:
     linear-gradient(rgb(33,77,98), rgb(29,57,77));
-}
-.signin{
-  font-family: Tahoma;
 }
