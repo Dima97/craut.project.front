@@ -8,10 +8,15 @@
   top:10px;
   right:10px;
 }
+.logout{
+  position: absolute;
+  top: 10px;
+  right: 200px;
+}
 .search{
   position: absolute;
   top:10px;
-  right:250px;
+  right:350px;
 }
 .text-log{
   font-family: "Brush Script MT";

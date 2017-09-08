@@ -18,5 +18,11 @@
   "LastName": "Фамилия",
   "Nick": "Ник",
   "confirmPassword": "подтверждение пароля",
-  "FORGOTPASS":"Забыли пароль"
+  "FORGOTPASS":"Забыли пароль",
+  "Yes":"Да",
+  "No": "Нет",
+  "Logout":"Выйти",
+  "Profile":"Кабинет пользователя",
+  "EditProfile":"Изменить профиль",
+  "SettingsProfile": "настройки профиля"
 }

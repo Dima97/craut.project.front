@@ -1,6 +1,5 @@
 import {animate, Component, state, style, transition, trigger} from '@angular/core';
 
-declare var $:any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,9 +7,15 @@ declare var $:any;
 
 })
 export class LoginComponent {
-  activeLink: boolean = false;
+  activeLinkLogin: boolean = true;
+  activeLinkRegister: boolean = false;
 
-  changeActive(){
-    this.activeLink = !this.activeLink;
+  changeActiveLogin(){
+    this.activeLinkLogin = true;
+    this.activeLinkRegister=false;
+  }
+  changeActiveRegister() {
+    this.activeLinkRegister = true;
+    this.activeLinkLogin = false;
   }
 }

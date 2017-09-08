@@ -18,5 +18,11 @@
   "LastName": "Last name",
   "Nick": "Nick name",
   "confirmPassword": "confirm password",
-  "FORGOTPASS":"Forgot password"
+  "FORGOTPASS":"Forgot password",
+  "Yes":"Yes",
+  "No": "No",
+  "Logout":"Logout",
+  "Profile":"Profile page",
+  "EditProfile": "Edit profile",
+  "SettingsProfile": "Profile setting"
 }

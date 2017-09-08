@@ -18,9 +18,15 @@ import {UserService} from '../service/userService';
 import {AuthGuard} from '../service/guards/auth.guards';
 import {AuthenticationService} from '../service/AuthentificationService';
 import {authHttpUserFactory} from '../../authUserFactory';
-import {routing} from "./app.routing";
+import {appRouting, routing} from "./app.routing";
 // import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import {CommonModule} from "@angular/common";
+import {logoutComponent} from "./logout/logout.component";
+import {profileComponent} from "./profile/profile.component";
+import {RouterModule, Router, Routes} from "@angular/router";
+import {appMenuProfileComponent} from "./profile/menuProfile/menuProfile.component";
+import {EditProfileComponent} from "./profile/EditProfile/editProfile.component";
+import {InfoProfileComponent} from "./profile/InfoProfile/infoProfile.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -33,18 +39,21 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     LoginComponent,
     LoginPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    logoutComponent,
+    profileComponent,
+    appMenuProfileComponent,
+    EditProfileComponent,
+    InfoProfileComponent
   ],
   imports: [
     BrowserModule,
     DropdownModule,
     FormsModule,
     CommonModule,
-    // routing,
+    routing,
     HttpModule,
-    // DndModule.forRoot(),
     HttpClientModule,
-    // BootstrapModalModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -62,6 +71,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserService,
     AuthGuard,
     AuthenticationService
+    // appRouting
   ],
   bootstrap: [ AppComponent]
 })

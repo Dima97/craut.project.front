@@ -1,5 +1,7 @@
-<h1><strong translate class="text-log">Title</strong></h1>
-<div class="container">
+<!--<h1><strong translate class="text-log">Title</strong></h1>-->
+<nav id="navbar-header" class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <h1><strong translate class="text-log">Title</strong></h1>
   <div class="dropdown settings" dropdown>
     <button class="btn btn-primary"  dropdown-open>{{"Settings"| translate}}</button>
     <ul class="dropdown-menu">
@@ -7,16 +9,25 @@
       <li><a (click)="switchLanguage('ru')">{{'ru'|translate}}</a></li>
       <li><a>{{'dark'|translate}}</a></li>
       <li><a>{{'white'|translate}}</a></li>
+      <li><a href="profile">{{'SettingsProfile'|translate}}</a></li>
     </ul>
   </div>
-  <!--<button class="login btn-primary btn" id="login-button-header"  onclick='location.href="#openModal"'>{{'login'|translate}}</button>-->
-  <button class="login btn-primary btn" id="login-button-header" data-toggle="modal"
+  <button  class="login btn-primary btn" id="login-button-header" data-toggle="modal"
           data-target="#openModal" >{{'login'|translate}}</button>
+
+  <button  class="btn btn-primary logout" id="logout-button-header" data-toggle="modal"
+          data-target="#openLogout">{{'Logout'|translate}}</button>
+
   <div class="search">
     <input name="query" type="text" class="search-query txt-field" placeholder="{{'inpsearche'|translate}}">
     <button type="submit" class="btn">{{'searche'|translate}}</button>
   </div>
 </div>
+</nav>
 <div id="openModal" class="modal fade" aria-labelledby="openModal" tabindex="-1" aria-hidden="true" role="dialog"  >
   <app-login ></app-login>
 </div>
+<div id="openLogout" class="modal fade" aria-hidden="true" aria-labelledby="openLogout" tabindex="-1" role="dialog">
+  <app-logout></app-logout>
+</div>
+
