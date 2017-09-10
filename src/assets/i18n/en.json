@@ -24,5 +24,8 @@
   "Logout":"Logout",
   "Profile":"Profile page",
   "EditProfile": "Edit profile",
-  "SettingsProfile": "Profile setting"
+  "SettingsProfile": "Profile setting",
+  "IncorrectEmail":"Incorrect email",
+  "IncorrectPassword":"Incorrect password",
+  "IncorrectConfirmPassword":"Incorrect confirm password"
 }

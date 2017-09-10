@@ -24,5 +24,8 @@
   "Logout":"Выйти",
   "Profile":"Кабинет пользователя",
   "EditProfile":"Изменить профиль",
-  "SettingsProfile": "настройки профиля"
+  "SettingsProfile": "Настройки профиля",
+  "IncorrectEmail":"Некорректный email",
+  "IncorrectPassword":"Некорректный пароль",
+  "IncorrectConfirmPassword":"Некорректное подтверждение пароля"
 }

@@ -17,4 +17,5 @@ export class RegisterComponent {
   checkNick(){}
   checkPassword(){}
   checkConfirmPassword(){}
+  register(data: any) {}
 }
