@@ -13,29 +13,50 @@ declare let $: any;
   styleUrls: ['./loginpage.component.css']
 })
 export class LoginPageComponent {
-  isLoginCorrect = false;
-  isPasswordExist = false;
-  formErrors = {
-    mylogin: null,
-    password: null
-  };
-  model: any = {};
-  loading;
   error: string;
   protected user: User = new User();
 
-  constructor(private authenticationService: AuthenticationService) {
+  constructor(private authenticationService: AuthenticationService,
+              private userServise: UserService,
+              private router: Router,
+              private userService: UserService) {
 
   }
   checkLogin() {}
   checkPassword() {}
+  // login(data: any) {
+  //   console.log(this.user.username + ' ' + this.user.password);
+  //   this.authenticationService.login(this.user.username, this.user.password).subscribe(result => {
+  //     if (result === true) {
+  //       $('#hidden-submit').click();
+  //       console.log('next save');
+  //       this.userService.saveCurrentUser(this.user.username);
+  //       this.router.navigate(['/profile']);
+  //     }}, (err) => {
+  //     if (err === 'Unauthorized') {
+  //       this.error = "INCORRECT_PASS";
+  //     }});
+  //   this.authenticationService.getMe();
+  //     }
+  loading = false;
+  returnUrl: string;
+  errorMessage: string;
   login(data: any) {
-    console.log(this.user.email + ' ' + this.user.password);
-    this.authenticationService.login(this.user.email, this.user.password).subscribe(result => {
-      if (result === true) {
-        $('#hidden-submit').click();
-        console.log('next save');
-      }
-    });
+    this.loading = true;
+    this.errorMessage = null;
+    this.authenticationService.login(this.user.username, this.user.password)
+      .flatMap(data => {
+        return this.authenticationService.getMe();
+      })
+      .subscribe(
+        data => {
+          localStorage.setItem('user', JSON.stringify(data));
+          this.router.navigate([this.returnUrl]);
+        },
+        error => {
+          this.loading = false;
+          this.errorMessage = error.json().message;
+        }
+      );
   }
 }

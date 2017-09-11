@@ -18,10 +18,34 @@ export class UserService extends CoreService {
     private authentificationService: AuthenticationService) {
     super();
   }
-  getUsers(): Observable<User[]> {
-    let headers = new Headers({'Authorization': 'Bearer' + this.authentificationService.token});
-    let options = new RequestOptions({headers: headers});
-
-    return this.http.get('/api/users', options).map((response: Response) => response.json());
+  register(user: User){
+    console.log("registration");
+    return this.http.post(`${this.webService}registration`,user).map((response:Response) => response);
   }
+  getProfileByLogin(login: String) {
+    let body =  {username: login};
+    return this.authHttp.post(`${this.webService}get-user`,body)
+      .map((response: Response) => response.json());
+  }
+  updateProfile(user: User) {
+    console.log(JSON.stringify(user));
+    return this.authHttp.post(`${this.webService}update-user`, user)
+      .map((response: Response) => response);
+  }
+  saveCurrentUser(username: string){
+    this.getProfileByLogin(username).subscribe(
+      data => {
+        localStorage.setItem('currentUserData', JSON.stringify({
+          login: data.username,
+          id: data.id,
+          // image: data.image,
+        }));
+        console.log('data_ ' + localStorage.getItem('currentUserData'));
+        console.log('data_ ' + localStorage.getItem('currentUser'));
+      },
+      error => {
+        console.log('error in getProfileByLogin');
+      });
+  }
+
 }

@@ -27,6 +27,10 @@ import {RouterModule, Router, Routes} from "@angular/router";
 import {appMenuProfileComponent} from "./profile/menuProfile/menuProfile.component";
 import {EditProfileComponent} from "./profile/EditProfile/editProfile.component";
 import {InfoProfileComponent} from "./profile/InfoProfile/infoProfile.component";
+import {ImageComponent} from "./imageArea/image.component";
+import {Ng2CloudinaryModule} from "ng2-cloudinary";
+import { FileUploadModule } from 'ng2-file-upload';
+import {CloudinaryComponent} from "./CloudinaryImageComponent/CloudinaryComponent";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -44,7 +48,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     profileComponent,
     appMenuProfileComponent,
     EditProfileComponent,
-    InfoProfileComponent
+    InfoProfileComponent,
+    ImageComponent,
+    CloudinaryComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +60,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     routing,
     HttpModule,
     HttpClientModule,
+    Ng2CloudinaryModule,
+    FileUploadModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
