@@ -31,6 +31,9 @@ import {ImageComponent} from "./imageArea/image.component";
 import {Ng2CloudinaryModule} from "ng2-cloudinary";
 import { FileUploadModule } from 'ng2-file-upload';
 import {CloudinaryComponent} from "./CloudinaryImageComponent/CloudinaryComponent";
+import {ProjectPageComponent} from "./createProject/projectPage.component";
+import {CalendarComponent} from "./createProject/calendar/calendar.component";
+import {DatePickerModule} from "ng2-datepicker";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -50,7 +53,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     EditProfileComponent,
     InfoProfileComponent,
     ImageComponent,
-    CloudinaryComponent
+    CloudinaryComponent,
+    ProjectPageComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     Ng2CloudinaryModule,
     FileUploadModule,
+    DatePickerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

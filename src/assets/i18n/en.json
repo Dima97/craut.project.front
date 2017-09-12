@@ -27,5 +27,16 @@
   "SettingsProfile": "Profile setting",
   "IncorrectEmail":"Incorrect email",
   "IncorrectPassword":"Incorrect password",
-  "IncorrectConfirmPassword":"Incorrect confirm password"
+  "IncorrectConfirmPassword":"Incorrect confirm password",
+  "SAVE":"Save",
+  "newFirstName":"New first name",
+  "newLastName": "New last name",
+  "newNick": "New nick name",
+  "newemail": "New email",
+  "newpassword": "New password",
+  "NameProject": "Name project",
+  "DescriptionProject": "Description project",
+  "ChooseDate": "Select the end date for fundraising",
+  "RequerMoney":"Enter the required amount",
+  "ChooseMoney":"Select"
 }

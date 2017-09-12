@@ -1,4 +1,5 @@
 import { Component} from "@angular/core";
+import {UserService} from "../../service/userService";
 
 @Component({
   selector: 'app-image-area',
@@ -14,4 +15,5 @@ export class ImageComponent {
   updateImg(value: any){
     this.id_img = 'http://res.cloudinary.com/crowbanding/image/upload/v1505169254/' + value + '.jpg';
   }
+
 }

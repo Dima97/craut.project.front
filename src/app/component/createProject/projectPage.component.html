@@ -1,0 +1,47 @@
+<div class="project-page">
+  <div class="panel" id="imagearea" >
+
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="photo">
+
+      <div class="panel panel-default">
+        <div class="panel-body" >
+          <div class="media">
+            <div align="center">
+              <img id="id-area-image" class="img-responsive" src={{id_image}}/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <app-cloudinary (upImgStep)="updateImg($event)"></app-cloudinary>
+    </div>
+
+  </div>
+
+<div>
+  <input type="text"  class="nameproject" id="name-project" placeholder="{{'NameProject'|translate}}">
+</div>
+  <br>
+  <div>
+  <input type="text"  class="description" id="id-area-val" placeholder="{{'DescriptionProject'|translate}}">
+  </div>
+  <div>
+    <app-colendar></app-colendar>
+  </div>
+  <br>
+<div class="panel-mony">
+  <div class="row">
+    <h2 class="col-lg-6 col-xs-6 col-sm-6" >{{'RequerMoney'|translate}}</h2>
+    <div class="dropdown settings" dropdown>
+      <input type="text" class="mony">
+      <button class="btn"  dropdown-open>{{"ChooseMoney"| translate}}</button>
+      <ul class="dropdown-menu">
+        <li><a>USA</a></li>
+        <li><a>BLR</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

@@ -27,5 +27,16 @@
   "SettingsProfile": "Настройки профиля",
   "IncorrectEmail":"Некорректный email",
   "IncorrectPassword":"Некорректный пароль",
-  "IncorrectConfirmPassword":"Некорректное подтверждение пароля"
+  "IncorrectConfirmPassword":"Некорректное подтверждение пароля",
+  "SAVE":"Сохранить",
+  "newFirstName":"Новое имя",
+  "newLastName": "Новая фамилия",
+  "newNick": "Новый ник",
+  "newemail": "Новый email",
+  "newpassword": "Новый пароль",
+  "NameProject": "Имя проекта",
+  "DescriptionProject": "Описание проекта",
+  "ChooseDate": "Выберите дату окончания сбора средств",
+  "RequerMoney":"Введите необходимую сумму",
+  "ChooseMoney":"Выберите"
 }
