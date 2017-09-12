@@ -38,5 +38,7 @@
   "DescriptionProject": "Description project",
   "ChooseDate": "Select the end date for fundraising",
   "RequerMoney":"Enter the required amount",
-  "ChooseMoney":"Select"
+  "ChooseMoney":"Select",
+  "Create":"Create",
+  "Drag":"Or drag and drop files below"
 }
