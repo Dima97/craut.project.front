@@ -41,9 +41,10 @@ export class AuthenticationService extends CoreService {
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login'])
   }
-
   getMe() {
     return this.authHttp.get(`${this.webService}me`).map(res => res.json());
   }
-
+  getPageURL(){
+    return this.http.get('URL');
+  }
 }

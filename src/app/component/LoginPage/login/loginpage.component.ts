@@ -24,20 +24,6 @@ export class LoginPageComponent {
   }
   checkLogin() {}
   checkPassword() {}
-  // login(data: any) {
-  //   console.log(this.user.username + ' ' + this.user.password);
-  //   this.authenticationService.login(this.user.username, this.user.password).subscribe(result => {
-  //     if (result === true) {
-  //       $('#hidden-submit').click();
-  //       console.log('next save');
-  //       this.userService.saveCurrentUser(this.user.username);
-  //       this.router.navigate(['/profile']);
-  //     }}, (err) => {
-  //     if (err === 'Unauthorized') {
-  //       this.error = "INCORRECT_PASS";
-  //     }});
-  //   this.authenticationService.getMe();
-  //     }
   loading = false;
   returnUrl: string;
   errorMessage: string;

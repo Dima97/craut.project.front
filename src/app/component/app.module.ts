@@ -34,6 +34,7 @@ import {CloudinaryComponent} from "./CloudinaryImageComponent/CloudinaryComponen
 import {ProjectPageComponent} from "./createProject/projectPage.component";
 import {CalendarComponent} from "./createProject/calendar/calendar.component";
 import {DatePickerModule} from "ng2-datepicker";
+import {SuccesRegistrationComponent} from "./succesfulRegistration/succesRegistration.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -55,7 +56,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ImageComponent,
     CloudinaryComponent,
     ProjectPageComponent,
-    CalendarComponent
+    CalendarComponent,
+    SuccesRegistrationComponent
   ],
   imports: [
     BrowserModule,
