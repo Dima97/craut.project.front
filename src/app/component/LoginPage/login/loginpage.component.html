@@ -17,9 +17,9 @@
       <div class="col-sm-6 col-sm-offset-3">
         <input [disabled]="username.invalid || password.invalid" type="submit"
                name="login-submit" id="login-submit" tabindex="3"
-               class="btn btn-info btn-block"  (click)="login(form.value)" value="{{'LOGIN'| translate}}">
+               class="btn btn-info btn-block"  (click)="login(form.value)"  value="{{'LOGIN'| translate}}">
       </div>
     </div>
   </div>
-  <button style="display: none" id="hidden-submit" data-dismiss="modal"></button>
+  <button style="display: none" id="hidden-submit"  data-dismiss="modal"></button>
 </form>

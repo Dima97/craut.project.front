@@ -1,0 +1,16 @@
+<div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="photo">
+
+  <div class="panel panel-default">
+    <div class="panel-body" >
+      <div class="media">
+        <div align="center">
+          <img id="default-img" *ngIf="!project.image"
+               src="http://res.cloudinary.com/crowbanding/image/upload/c_lfill,h_300,q_100,r_0,w_200/a_0/sy6afdedllqhpbh8zebq.jpg"/>
+          <div>
+            <img id="cloud-img" *ngIf="project.image"
+                 src='http://res.cloudinary.com/dhimzt8vr/image/upload/c_lfill,h_250,q_100,r_0,w_250/a_0/{{project.image}}.jpg'/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

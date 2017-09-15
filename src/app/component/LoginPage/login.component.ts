@@ -23,7 +23,4 @@ export class LoginComponent {
     this.activeLinkRegister = true;
     this.activeLinkLogin = false;
   }
-  closeModal(){
-    console.log("suka");
-  }
 }

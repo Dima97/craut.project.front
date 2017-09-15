@@ -10,9 +10,7 @@ import {error} from "util";
 })
 
 export class InfoProfileComponent {
-  private username: string;
   protected user:User;
-  private data: any;
 
   constructor()
   {

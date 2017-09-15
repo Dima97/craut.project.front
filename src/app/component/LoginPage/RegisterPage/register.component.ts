@@ -23,5 +23,6 @@ export class RegisterComponent {
     this.userService.register(this.user).subscribe(data => {
       console.log(data);
     })
+    location.href='/';
   }
 }

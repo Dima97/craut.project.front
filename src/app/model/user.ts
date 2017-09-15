@@ -1,23 +1,3 @@
-// // export class User {
-// //   id: number;
-// //   nickName: string;
-// //   firstName: string;
-// //   lastName: string;
-// //   password: string;
-// //   email: string;
-// //   image: string;
-// //   role: string;
-// // }
-// export class User {
-//   id: number;
-//   username: string;
-//   password: string;
-//   firstname: string;
-//   secondname: string;
-//   email: string;
-//   image: string;
-//   role: string;
-// }
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -26,7 +6,7 @@ export class User {
   private _username: string;
   private _password: string;
   private _firstname: string;
-  private _secondname: string;
+  private _lastname: string;
   private _email: string;
   private _image: string;
   private _role: string;
@@ -56,20 +36,20 @@ export class User {
     this._password = value;
   }
 
-  get firstname(): string {
+  get firstName(): string {
     return this._firstname;
   }
 
-  set firstname(value: string) {
+  set firstName(value: string) {
     this._firstname = value;
   }
 
-  get lastname(): string {
-    return this._secondname;
+  get lastName(): string {
+    return this._lastname;
   }
 
-  set lastname(value: string) {
-    this._secondname = value;
+  set lastName(value: string) {
+    this._lastname = value;
   }
 
   get email(): string {

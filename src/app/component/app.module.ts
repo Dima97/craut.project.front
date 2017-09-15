@@ -38,6 +38,8 @@ import {SuccesRegistrationComponent} from "./succesfulRegistration/succesRegistr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
 import {OverlayContainer} from "@angular/cdk/typings/overlay";
+import {ConfirmProfileComponent} from "./profile/confirmProfile/confirmProfile.component";
+import {ProjectInfoComponent} from "./profile/projectPage/projectInfo.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -60,7 +62,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     CloudinaryComponent,
     ProjectPageComponent,
     CalendarComponent,
-    SuccesRegistrationComponent
+    SuccesRegistrationComponent,
+    ConfirmProfileComponent,
+    ProjectInfoComponent
   ],
   imports: [
     BrowserModule,

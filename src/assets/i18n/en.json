@@ -41,5 +41,9 @@
   "ChooseMoney":"Select",
   "Create":"Create",
   "Drag":"Or drag and drop files below",
-  "Purpose":"Purpose"
+  "Purpose":"Purpose",
+  "ConfirmProfile":"Confirm profile",
+  "Additionally":"Additionally",
+  "Send":"Send",
+  "ViewProject": "Info about your projects"
 }
