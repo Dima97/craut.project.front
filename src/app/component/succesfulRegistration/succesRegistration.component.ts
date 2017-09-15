@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {AuthenticationService} from "../../service/AuthentificationService";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector:'app-succes-register',
@@ -9,13 +10,10 @@ import {AuthenticationService} from "../../service/AuthentificationService";
   providers: [AuthenticationService]
 })
 
-export class SuccesRegistrationComponent implements OnInit{
+export class SuccesRegistrationComponent{
 
+  private token:string;
   private urlPage:string;
-  constructor (private http: Http,
-               private autentificationService:AuthenticationService){}
-  ngOnInit(){
-    this.autentificationService.getPageURL().subscribe((data:Response) => this.urlPage = data.json());
-    console.log(this.urlPage);
+  constructor (){
   }
 }

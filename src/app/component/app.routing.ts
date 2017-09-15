@@ -6,10 +6,11 @@ import {profileComponent} from "./profile/profile.component";
 import {CloudinaryComponent} from "./CloudinaryImageComponent/CloudinaryComponent";
 import {ProjectPageComponent} from "./createProject/projectPage.component";
 import {SuccesRegistrationComponent} from "./succesfulRegistration/succesRegistration.component";
+import {AppComponent} from "./app.component";
 
 const appRoutes: Routes = [
   {path:'succesRegistration',component: SuccesRegistrationComponent},
-  {path: 'project', component:ProjectPageComponent},
+  {path: 'project', component: ProjectPageComponent},
   {path: 'profile', component: profileComponent},
   { path: '**', redirectTo: '/' }
 ];

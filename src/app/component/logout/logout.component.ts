@@ -1,4 +1,5 @@
 import { Component} from "@angular/core";
+import {AuthConfigConsts} from "angular2-jwt";
 
 @Component({
   selector: 'app-logout',
@@ -7,5 +8,7 @@ import { Component} from "@angular/core";
 })
 
 export class logoutComponent {
-  logout() {}
+  logout() {
+    localStorage.clear()
+  }
 }

@@ -35,6 +35,9 @@ import {ProjectPageComponent} from "./createProject/projectPage.component";
 import {CalendarComponent} from "./createProject/calendar/calendar.component";
 import {DatePickerModule} from "ng2-datepicker";
 import {SuccesRegistrationComponent} from "./succesfulRegistration/succesRegistration.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import {OverlayContainer} from "@angular/cdk/typings/overlay";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -91,5 +94,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   bootstrap: [ AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

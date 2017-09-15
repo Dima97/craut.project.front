@@ -12,16 +12,16 @@
     </div>
    <hr/>
    </div>
-      <div id="login" [class.none]="!activeLinkLogin" >
-        <h2 class="text-center">{{'LOGIN'|translate}}</h2>
-        <app-login-page></app-login-page>
-      </div>
-      <div id="register" [class.none]="!activeLinkRegister" >
-        <h2 class="text-center"> {{'REGISTER'|translate}}</h2>
-        <app-register-page></app-register-page>
-      </div>
-      <div class="modal-footer">
-        <button  type="button" class="btn-default btn"  data-dismiss="modal">{{'Close'|translate}}</button>
-      </div>
+    <div id="login" *ngIf="activeLinkLogin" >
+      <h2 class="text-center">{{'LOGIN'|translate}}</h2>
+      <app-login-page></app-login-page>
+    </div>
+    <div id="register" *ngIf="activeLinkRegister" >
+      <h2 class="text-center"> {{'REGISTER'|translate}}</h2>
+      <app-register-page></app-register-page>
+    </div>
+    <div class="modal-footer">
+      <button  type="button" class="btn-default btn close" data-dismiss="modal">{{'Close'|translate}}</button>
+    </div>
   </div>
 </div>

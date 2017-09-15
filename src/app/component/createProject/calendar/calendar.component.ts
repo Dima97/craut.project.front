@@ -13,4 +13,7 @@ export class CalendarComponent {
   constructor() {
     this.options = new DatePickerOptions();
   }
+  getDate(){
+    console.log(this.date);
+  }
 }

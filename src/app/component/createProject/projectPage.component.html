@@ -1,4 +1,4 @@
-<form (ngSubmit)="sendData(form.value)" #form="ngForm" role="form">
+<form #form="ngForm"   role="form">
 <div class="project-page">
   <div class="panel" id="imagearea" >
 
@@ -8,7 +8,7 @@
         <div class="panel-body" >
           <div class="media">
             <div align="center">
-              <img id="id-area-image" class="img-responsive" [ngModel]="project.image" src={{id_image}}/>
+              <img id="id-area-image" class="img-responsive" name="project_image" src={{project.image}}/>
             </div>
           </div>
         </div>
@@ -22,14 +22,14 @@
   </div>
 
 <div>
-  <input type="text" [ngModel]="project.name" class="nameproject" id="name-project" placeholder="{{'NameProject'|translate}}">
+  <input type="text" [(ngModel)]="project.name" name="name" class="nameproject" id="name-project" placeholder="{{'NameProject'|translate}}">
 </div>
   <br>
   <div>
-  <input type="text" [ngModel]="project.purpose" class="nameproject" id="purpose-project" placeholder="{{'Purpose'|translate}}">
+  <input type="text" [(ngModel)]="project.purpose" name="purpose" class="nameproject" id="purpose-project" placeholder="{{'Purpose'|translate}}">
   </div>
   <div>
-    <textarea class="description" [ngModel]="project.content" name="descriptionProject" placeholder="{{'DescriptionProject'|translate}}"></textarea>
+    <textarea class="description" [(ngModel)]="project.content" id="text-area-component" name="descriptionProject" placeholder="{{'DescriptionProject'|translate}}"></textarea>
   </div>
   <div>
     <app-colendar></app-colendar>
@@ -40,7 +40,7 @@
   <div class="row">
     <h2 class="col-lg-6 col-xs-6 col-sm-6" >{{'RequerMoney'|translate}}</h2>
     <ul class="menu" style="position:relative; top: 20px;">
-      <input type="text" [ngModel]="project.money" class="mony">
+      <input type="text" [(ngModel)]="project.money" id="money-field" name="money" class="mony">
       <li><a>{{'ChooseMoney'|translate}}</a>
         <ul class="submenu">
           <li><a href=#>USA</a></li>
@@ -53,7 +53,7 @@
 </div>
   <div class="container">
   <div align="center" class="createButton">
-    <input type="button" class="createProject" (onclick)="sendData()" value="{{'Create'|translate}}">
+    <input type="button" class="createProject" id="create"  (click)="getDate()" value="{{'Create'|translate}}">
   </div>
   </div>
 </div>

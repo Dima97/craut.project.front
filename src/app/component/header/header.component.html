@@ -7,7 +7,7 @@
     <ul class="dropdown-menu">
       <li><a (click)="switchLanguage('en')">{{'en'|translate}}</a></li>
       <li><a (click)="switchLanguage('ru')">{{'ru'|translate}}</a></li>
-      <li><a>{{'dark'|translate}}</a></li>
+      <li><a (click)="changeMode()">{{'dark'|translate}}</a></li>
       <li><a>{{'white'|translate}}</a></li>
       <li><a href="profile">{{'SettingsProfile'|translate}}</a></li>
     </ul>

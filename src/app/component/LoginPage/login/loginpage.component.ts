@@ -1,26 +1,24 @@
-import {animate, Component, state, style, transition, trigger} from '@angular/core';
+import {animate, Component, OnInit, state, style, transition, trigger} from '@angular/core';
 import { Router } from '@angular/router';
 import {User} from '../../../model/user';
 import {UserService} from '../../../service/userService';
 import {AuthenticationService} from '../../../service/AuthentificationService';
 import {Http} from "@angular/http";
+import {FormGroup, NgForm} from "@angular/forms";
+import {NgFor} from "@angular/common";
 
-
-declare let $: any;
 @Component({
   selector: 'app-login-page',
   templateUrl: './loginpage.component.html',
-  styleUrls: ['./loginpage.component.css']
+  styleUrls: ['./loginpage.component.css'],
 })
-export class LoginPageComponent {
+export class LoginPageComponent{
   error: string;
+  protected change: boolean = false;
   protected user: User = new User();
-
   constructor(private authenticationService: AuthenticationService,
               private userServise: UserService,
-              private router: Router,
-              private userService: UserService) {
-
+              private router: Router) {
   }
   checkLogin() {}
   checkPassword() {}
@@ -36,13 +34,17 @@ export class LoginPageComponent {
       })
       .subscribe(
         data => {
-          localStorage.setItem('user', JSON.stringify(data));
-          this.router.navigate([this.returnUrl]);
+          localStorage.setItem('currentUser', JSON.stringify(data));
+          this.router.navigate(['/profile']);
         },
         error => {
           this.loading = false;
-          this.errorMessage = error.json().message;
+          console.log(this.errorMessage = error);
         }
       );
+
+  }
+  formReset(form: NgForm){
+      form.reset();
   }
 }

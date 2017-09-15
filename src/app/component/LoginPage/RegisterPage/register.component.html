@@ -4,7 +4,7 @@
            id="firstname" class="form-control" value=""
     placeholder="{{'FirstName'|translate}}" (input)="checkFirstName()" #firstname="ngModel" required >
     <br>
-    <input type="text" [(ngModel)]="user.secondname" name="lastname" id="lastname" class="form-control" value=""
+    <input type="text" [(ngModel)]="user.lastname" name="lastname" id="lastname" class="form-control" value=""
     placeholder="{{'LastName'|translate}}" (input)="checkLastName()" #lastname="ngModel" required >
     <br>
     <input type="text" [(ngModel)]="user.email" name="email" id="email" class="form-control" value=""
@@ -35,7 +35,7 @@
       <div class="col-sm-6 col-sm-offset-3">
         <input [disabled]="firstname.invalid||lastname.invalid||email.invalid||nickName.invalid||password.invalid"
                type="submit" name="register-submit" id="login-submit" tabindex="3"
-               class="btn btn-info btn-block" value="{{'REGISTER'| translate}}">
+               class="btn btn-info btn-block" onclick='location.href="/"' value="{{'REGISTER'| translate}}">
       </div>
     </div>
   </div>

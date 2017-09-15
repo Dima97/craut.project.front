@@ -16,8 +16,8 @@ export class AuthenticationService extends CoreService {
               private authHttp: AuthHttp,
               private router: Router) {
     super();
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.token = currentUser && currentUser.token;
+    // const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    // this.token = currentUser && currentUser.token;
   }
   login(username: string, password: string) {
     let headers = new Headers();
@@ -36,15 +36,7 @@ export class AuthenticationService extends CoreService {
         localStorage.setItem(AuthConfigConsts.DEFAULT_TOKEN_NAME, token.token);
       });
   }
-  logout() {
-    localStorage.removeItem(AuthConfigConsts.DEFAULT_TOKEN_NAME);
-    localStorage.removeItem('currentUser');
-    this.router.navigate(['/login'])
-  }
   getMe() {
     return this.authHttp.get(`${this.webService}me`).map(res => res.json());
-  }
-  getPageURL(){
-    return this.http.get('URL');
   }
 }

@@ -1,11 +1,9 @@
-<form id="login-form" #form="ngForm" (ngSubmit)="login(form.value)">
+
+<form id="login-form" #form="ngForm"  (onSubmit)="formReset(form)">
   <div class="form-group" >
     <input type="text" [(ngModel)]="user.username" name="username" id="username"
            tabindex="1" class="form-control" #username="ngModel"
-    value="" placeholder="{{'email'|translate}}" (input)="checkLogin()" required >
-    <!--<div [hidden]="email.valid || email.untouched" class="alert" style="color: red">-->
-     <!--{{'IncorrectEmail'|translate}}-->
-    <!--</div>-->
+    value="" placeholder="{{'username'|translate}}" (input)="checkLogin()" required >
     <br>
     <input type="password" [(ngModel)]="user.password" name="password" id="password" tabindex="2"
            class="form-control" #password="ngModel"
@@ -19,7 +17,7 @@
       <div class="col-sm-6 col-sm-offset-3">
         <input [disabled]="username.invalid || password.invalid" type="submit"
                name="login-submit" id="login-submit" tabindex="3"
-               class="btn btn-info btn-block" value="{{'LOGIN'| translate}}">
+               class="btn btn-info btn-block"  (click)="login(form.value)" value="{{'LOGIN'| translate}}">
       </div>
     </div>
   </div>
