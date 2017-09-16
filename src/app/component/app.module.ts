@@ -42,6 +42,7 @@ import {ConfirmProfileComponent} from "./profile/confirmProfile/confirmProfile.c
 import {ProjectInfoComponent} from "./profile/projectPage/projectInfo.component";
 import {AdminPageComponent} from "./profile/adminPage/adminPage.component";
 import {ErrorAccesComponent} from "./Error/errorAcces/errorAcces.component";
+import {ValidationData} from "../service/validationData";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -97,7 +98,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     },
     UserService,
     AuthGuard,
-    AuthenticationService
+    AuthenticationService,
+    ValidationData
     // appRouting
   ],
   bootstrap: [ AppComponent]

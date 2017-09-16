@@ -1,6 +1,8 @@
 import {animate, Component, state, style, transition, trigger} from '@angular/core';
 import {User} from "../../../model/user";
 import {UserService} from "../../../service/userService";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {ValidationData} from "../../../service/validationData";
 
 @Component({
   selector: 'app-register-page',
@@ -10,15 +12,29 @@ import {UserService} from "../../../service/userService";
 })
 export class RegisterComponent {
   protected user: User = new User();
-  protected confirmPassword: string;
-  constructor (private userService: UserService) {}
+  isPasswordConfirm = false;
+  passwordConfirm: string;
+  protected error: string;
+  form: FormGroup;
+  formErrors = {
+    passwordConfirm: ''
+  };
+  constructor(private userService: UserService,
+              private validationService:ValidationData)
+  {}
+
+  static setErrors(answer: string) {
+    return answer === null;
+  }
   controller() {}
   checkFirstName(){}
   checkLastName(){}
   checkEmail(){}
   checkNick(){}
-  checkPassword(){}
-  checkConfirmPassword(){}
+  checkPasswordConfirm(){
+    this.formErrors.passwordConfirm = this.validationService.confirmPassword(this.user.password, this.passwordConfirm);
+    this.isPasswordConfirm = RegisterComponent.setErrors(this.formErrors.passwordConfirm);
+  }
   register(data: any) {
     this.userService.register(this.user).subscribe(data => {
       console.log(data);

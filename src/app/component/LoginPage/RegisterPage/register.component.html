@@ -1,4 +1,4 @@
-<form class="register-form" #form="ngForm" (ngSubmit)="register(form.value)" role="form" style="display: inline">
+<form class="register-form" #form="ngForm" novalidate (ngSubmit)="register(form.value)" role="form" style="display: inline">
   <div class="form-group">
     <input type="text" [(ngModel)]="user.firstName" name="firstname"
            id="firstname" class="form-control" value=""
@@ -17,26 +17,31 @@
     placeholder="{{'Nick'|translate}}" (input)="checkNick()" #nickName="ngModel" required>
     <br>
     <input type="password" [(ngModel)]="user.password" name="password"
-           id="password" class="form-control" value="confirmpas"
-    placeholder="{{'password'|translate}}" (input)="checkPassword()"
+           id="password" class="form-control" value=""
+    placeholder="{{'password'|translate}}"
            #password="ngModel" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$" >
     <div [hidden]="password.valid || password.untouched"
          class="alert" style="color: red">{{'IncorrectPassword'|translate}}</div>
     <br>
-    <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" id="confirmPassword"
-           class="form-control" value="" placeholder="{{'confirmPassword'| translate}}"
-           (input)="checkConfirmPassword()" required
-    pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$">
-    <!--<div [hidden]="confirmPassword.valid || confirmPassword.untouched" class="alert alert-danger">-->
-      <!--{{'IncorrectConfirmPassword'|translate}}</div>-->
-  </div>
+    <div class="form-group" ngClass="{{isPasswordConfirm?'has-success':''}}">
+      <input type="password" [(ngModel)]="passwordConfirm" (keyup)="checkPasswordConfirm()"
+             name="passwordConfirm" id="password-confirm" tabindex="4"
+             class="form-control" placeholder="{{'confirmPassword'|translate}}"
+             #confirmpassword="ngModel" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$">
+      <div [hidden]="confirmpassword.valid || confirmpassword.untouched"
+           class="alert" style="color: red"></div>
+    </div>
+    <span class="alert" *ngIf="formErrors.passwordConfirm" style="color: red">
+      {{ 'ErrorConfirm'| translate}}
+    </span>
   <div class="form-group">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
-        <input [disabled]="firstname.invalid||lastname.invalid||email.invalid||nickName.invalid||password.invalid"
+        <input [disabled]="firstname.invalid||lastname.invalid||email.invalid|| nickName.invalid|| password.invalid || !form.form.valid"
                type="submit" name="register-submit" id="login-submit" tabindex="3"
                class="btn btn-info btn-block" onclick='register(form.value)' value="{{'REGISTER'| translate}}">
       </div>
     </div>
+  </div>
   </div>
 </form>

@@ -1,5 +1,6 @@
 import { Component} from "@angular/core";
 import {Project} from "../../../model/project";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -10,4 +11,5 @@ import {Project} from "../../../model/project";
 
 export class ProjectInfoComponent {
   protected project: Project = new Project();
+  constructor (protected router: Router){}
 }

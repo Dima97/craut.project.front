@@ -24,11 +24,17 @@
     <div [hidden]="password.valid || password.untouched"
          class="alert" style="color: red">{{'IncorrectPassword'|translate}}</div>
     <br>
-    <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" id="confirmPassword"
-           class="form-control" value="" placeholder="{{'confirmPassword'| translate}}"
-           (input)="checkConfirmPassword()" required
-           pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$">
-  </div>
+    <div class="form-group" ngClass="{{isPasswordConfirm?'has-success':''}}">
+      <input type="password" [(ngModel)]="passwordConfirm" (keyup)="checkPasswordConfirm()"
+             name="passwordConfirm" id="password-confirm" tabindex="4"
+             class="form-control" placeholder="{{'confirmPassword'|translate}}" #confirmpassword="ngModel" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$">
+      <div [hidden]="confirmpassword.valid || confirmpassword.untouched"
+           class="alert" style="color: red"></div>
+    </div>
+    </div>
+    <span class="alert" *ngIf="formErrors.passwordConfirm" style="color: red">
+                {{ 'ErrorConfirm'| translate}}
+              </span>
   <div class="form-group">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-6">

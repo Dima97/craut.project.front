@@ -47,5 +47,6 @@
   "Send":"Send",
   "ViewProject": "Info about your projects",
   "NIGHT_MODE": "Dark",
-  "Admin":"Admin page"
+  "Admin":"Admin page",
+  "ErrorConfirm":"Confirm password not equals"
 }

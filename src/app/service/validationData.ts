@@ -4,8 +4,14 @@ import { UserService} from "./userService";
 @Injectable()
 export class ValidationData{
   errors = {
-    email: "INVALID_EMAIL",
-    password: "INVALID_PASSWORD"
+    password: "INVALID_PASSWORD",
+    confirmPass: "PASSWORDS_NOT_EQUALS",
   }
-
+  confirmPassword(password: string, confirm: string) {
+    if(password === confirm) {
+      return null;
+    } else {
+      return this.errors.confirmPass;
+    }
+  }
 }

@@ -10,6 +10,7 @@ export class User {
   private _email: string;
   private _image: string;
   private _role: string;
+
   constructor(){}
 
   get id(): number {
