@@ -4,7 +4,7 @@ import {User} from '../model/user';
 import {Response, Headers, Http, RequestOptions} from '@angular/http';
 import {AuthenticationService} from './AuthentificationService';
 import {Observable} from 'rxjs/Observable';
-import { AuthHttp } from 'angular2-jwt';
+import {AuthConfigConsts, AuthHttp} from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 
 
@@ -23,8 +23,15 @@ export class UserService extends CoreService {
     return this.http.post(`${this.webService}registration`,user).map((response:Response) => response);
   }
   updateProfile(user: User) {
-    console.log(JSON.stringify(user));
-    return this.authHttp.post(`${this.webService}update-user`, user)
+    var data : any ;
+    data = localStorage.getItem("image");
+    localStorage.removeItem("image");
+    this.user = user;
+    this.user.image = data;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
+    return this.authHttp.post(`${this.webService}update-user`, this.user,{headers})
       .map((response: Response) => response);
   }
 

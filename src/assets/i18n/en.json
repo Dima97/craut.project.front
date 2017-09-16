@@ -24,7 +24,7 @@
   "Logout":"Logout",
   "Profile":"Profile page",
   "EditProfile": "Edit profile",
-  "SettingsProfile": "Profile setting",
+  "SettingsProfile": "Profile",
   "IncorrectEmail":"Incorrect email",
   "IncorrectPassword":"Incorrect password",
   "IncorrectConfirmPassword":"Incorrect confirm password",
@@ -45,5 +45,7 @@
   "ConfirmProfile":"Confirm profile",
   "Additionally":"Additionally",
   "Send":"Send",
-  "ViewProject": "Info about your projects"
+  "ViewProject": "Info about your projects",
+  "NIGHT_MODE": "Dark",
+  "Admin":"Admin page"
 }

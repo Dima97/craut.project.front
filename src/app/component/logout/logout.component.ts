@@ -9,6 +9,8 @@ import {AuthConfigConsts} from "angular2-jwt";
 
 export class logoutComponent {
   logout() {
-    localStorage.clear()
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem('token');
+    location.href = "/";
   }
 }

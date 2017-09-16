@@ -40,6 +40,8 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
 import {OverlayContainer} from "@angular/cdk/typings/overlay";
 import {ConfirmProfileComponent} from "./profile/confirmProfile/confirmProfile.component";
 import {ProjectInfoComponent} from "./profile/projectPage/projectInfo.component";
+import {AdminPageComponent} from "./profile/adminPage/adminPage.component";
+import {ErrorAccesComponent} from "./Error/errorAcces/errorAcces.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -64,7 +66,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     CalendarComponent,
     SuccesRegistrationComponent,
     ConfirmProfileComponent,
-    ProjectInfoComponent
+    ProjectInfoComponent,
+    AdminPageComponent,
+    ErrorAccesComponent
   ],
   imports: [
     BrowserModule,

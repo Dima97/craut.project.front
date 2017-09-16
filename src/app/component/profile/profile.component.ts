@@ -1,4 +1,5 @@
 import { Component} from "@angular/core";
+import {AuthGuard} from "../../service/guards/auth.guards";
 
 @Component({
   selector: 'app-profile',
@@ -6,4 +7,6 @@ import { Component} from "@angular/core";
   styleUrls: ['./profile.component.css']
 })
 
-export class profileComponent {}
+export class profileComponent {
+  constructor( protected authGuard: AuthGuard){}
+}

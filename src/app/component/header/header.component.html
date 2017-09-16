@@ -3,24 +3,31 @@
   <div class="container-fluid">
     <h1><strong translate class="text-log">Title</strong></h1>
   <div class="dropdown settings" dropdown>
-    <button class="btn btn-primary"  dropdown-open>{{"Settings"| translate}}</button>
-    <ul class="dropdown-menu">
+    <button class="btn btn-primary"  dropdown-open style="position:relative; right: 20px;"><span class="glyphicon glyphicon-cog"></span></button>
+    <ul class="dropdown-menu" style="left: 0;">
       <li><a (click)="switchLanguage('en')">{{'en'|translate}}</a></li>
       <li><a (click)="switchLanguage('ru')">{{'ru'|translate}}</a></li>
-      <li><a (click)="changeMode()">{{'dark'|translate}}</a></li>
-      <li><a>{{'white'|translate}}</a></li>
-      <li><a href="profile">{{'SettingsProfile'|translate}}</a></li>
+      <li>
+      <a>
+        <div style="float: left">{{'NIGHT_MODE'|translate}}</div>
+        <a class="btn_switch" >
+          <input type="checkbox" name="switch" id="switch" [(ngModel)]="mode" (change)="changeMode()">
+          <label for="switch" style="margin-left: 10px"></label>
+        </a>
+      </a>
+    </li>
+      <li *ngIf="authGuard.isActivate() == true"><a href="profile"><span class="glyphicon glyphicon-user"></span> {{'SettingsProfile'|translate}}</a></li>
     </ul>
   </div>
-  <button  class="login btn-primary btn" id="login-button-header"  data-toggle="modal"
-          data-target="#openModal" >{{'login'|translate}}</button>
 
-  <button  class="btn btn-primary logout" id="logout-button-header" data-toggle="modal"
-          data-target="#openLogout">{{'Logout'|translate}}</button>
+  <button  class="login btn-primary btn" id="login-button-header"  *ngIf="authGuard.isActivate() == false"  data-toggle="modal"
+          data-target="#openModal" > <span class="glyphicon glyphicon-log-in"></span>  {{'login'|translate}}</button>
 
+  <button  class="btn btn-primary login" id="logout-button-header" *ngIf="authGuard.isActivate() == true" data-toggle="modal"
+          data-target="#openLogout">{{'Logout'|translate}}  <span class="glyphicon glyphicon-log-out" ></span></button>
   <div class="search">
     <input name="query" type="text" class="search-query txt-field" placeholder="{{'inpsearche'|translate}}">
-    <button type="submit" class="btn">{{'searche'|translate}}</button>
+    <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
   </div>
 </div>
 </nav>

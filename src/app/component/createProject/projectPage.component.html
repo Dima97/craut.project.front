@@ -1,4 +1,4 @@
-<form #form="ngForm"   role="form">
+<form #form="ngForm"   role="form" *ngIf="authGuard.isActivate() == true">
 <div class="project-page">
   <div class="panel" id="imagearea" >
 
@@ -58,3 +58,6 @@
   </div>
 </div>
 </form>
+<div style="position:relative; top: 80px" *ngIf="authGuard.isActivate() == false">
+  Sorry. Login or Get confirm from admin.
+</div>

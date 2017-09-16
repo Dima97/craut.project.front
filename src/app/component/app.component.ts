@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {OverlayContainer} from "@angular/cdk/typings/overlay";
 
@@ -10,9 +10,10 @@ import {OverlayContainer} from "@angular/cdk/typings/overlay";
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('ru');
+export class AppComponent implements OnInit{
+  constructor(private translate: TranslateService) {}
+  ngOnInit(){
+    this.translate.use(localStorage.getItem("language"));
   }
     changeLanguage(language: string) {
     this.translate.use(language);

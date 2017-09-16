@@ -3,6 +3,7 @@ import {ImageComponent} from "../imageArea/image.component";
 import {Project} from "../../model/project";
 import {ProjectService} from "../../service/projectService";
 import {CalendarComponent} from "./calendar/calendar.component";
+import {AuthGuard} from "../../service/guards/auth.guards";
 
 @Component({
   selector: 'app-project-page',
@@ -13,7 +14,8 @@ import {CalendarComponent} from "./calendar/calendar.component";
 
 export class ProjectPageComponent {
   protected project: Project = new Project;
-  constructor(private calendar:CalendarComponent) {
+  constructor(private calendar:CalendarComponent,
+              protected authGuard: AuthGuard) {
     this.project.image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505210950/azufvfotm2nypj55ebnm.png';
   }
   updateImg(value: any) {

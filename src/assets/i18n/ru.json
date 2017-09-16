@@ -24,7 +24,7 @@
   "Logout":"Выйти",
   "Profile":"Кабинет пользователя",
   "EditProfile":"Изменить профиль",
-  "SettingsProfile": "Настройки профиля",
+  "SettingsProfile": "Профиль",
   "IncorrectEmail":"Некорректный email",
   "IncorrectPassword":"Некорректный пароль",
   "IncorrectConfirmPassword":"Некорректное подтверждение пароля",
@@ -45,5 +45,7 @@
   "ConfirmProfile":"Подтверждение профиля",
   "Additionally":"Дополнительная информация",
   "Send":"Отправить",
-  "ViewProject": "Информация о проектах"
+  "ViewProject": "Информация о проектах",
+  "NIGHT_MODE": "Темная",
+  "Admin":"Страница админа"
 }
