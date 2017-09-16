@@ -43,6 +43,9 @@ import {ProjectInfoComponent} from "./profile/projectPage/projectInfo.component"
 import {AdminPageComponent} from "./profile/adminPage/adminPage.component";
 import {ErrorAccesComponent} from "./Error/errorAcces/errorAcces.component";
 import {ValidationData} from "../service/validationData";
+import {ViewProjectComponent} from "./ViewProjectComponent/viewProject.component";
+import {CommentComponent} from "./ViewProjectComponent/commentComponent/comment.component";
+import {ProjectService} from "../service/projectService";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -69,7 +72,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ConfirmProfileComponent,
     ProjectInfoComponent,
     AdminPageComponent,
-    ErrorAccesComponent
+    ErrorAccesComponent,
+    ViewProjectComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +104,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserService,
     AuthGuard,
     AuthenticationService,
-    ValidationData
+    ValidationData,
+    ProjectService,
+    CalendarComponent
     // appRouting
   ],
   bootstrap: [ AppComponent]

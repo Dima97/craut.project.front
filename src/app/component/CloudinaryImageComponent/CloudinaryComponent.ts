@@ -7,22 +7,7 @@ import {CloudinaryImageComponent, CloudinaryOptions, CloudinaryUploader} from 'n
   styleUrls:["./CloudinaryComponent.css"]
 })
 export class CloudinaryComponent{
-  // cloudinaryImage: any;
-  //
-  // uploader: CloudinaryUploader = new CloudinaryUploader(
-  //   new CloudinaryOptions({ cloudName: 'crowbanding', uploadPreset: 'f4k1c585' })
-  // );
-  //
-  // constructor() {
-  //   //Override onSuccessItem function to record cloudinary response data
-  //   this.uploader.onSuccessItem = (item: any, response: string, status: number, headers: any) => {
-  //     //response is the cloudinary response
-  //     //see http://cloudinary.com/documentation/upload_images#upload_response
-  //     this.cloudinaryImage = JSON.parse(response);
-  //
-  //     return {item, response, status, headers};
-  //   };
-  // }
+
   cloudinaryImage: any;
   @Output() upImg: EventEmitter<any> = new EventEmitter();
   @Output() upImgStep: EventEmitter<any> = new EventEmitter();

@@ -10,23 +10,12 @@ import {error} from "util";
 })
 
 export class InfoProfileComponent {
-  protected user:User;
+  protected user: User;
 
   constructor()
   {
     this.user = JSON.parse(localStorage.getItem("currentUser"));
     console.log(this.user);
   }
-  //
-  // constructor (private userSerivce: UserService){
-  //   this.username = JSON.parse(localStorage.getItem("token")).username;
-  //   this.userSerivce.getProfileByLogin(this.username).subscribe(
-  //     data => {
-  //       this.user = data;
-  //     }, error => {
-  //       console.log("error find user");
-  //     }
-  //   );
-  // }
 
 }

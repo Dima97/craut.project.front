@@ -33,6 +33,7 @@ export class EditProfileComponent {
     this.isPasswordConfirm = EditProfileComponent.setErrors(this.formErrors.passwordConfirm);
   }
   updateProfile(data: any) {
+    console.log(this.user);
     this.userService.updateProfile(this.user).subscribe(data => {
       console.log(data);
     });

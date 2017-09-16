@@ -1,79 +1,94 @@
+// import { Injectable } from '@angular/core';
+//
+// @Injectable()
+// export class User {
+//   private id: number;
+//   private username: string;
+//   private password: string;
+//   private firstname: string;
+//   private lastname: string;
+//   private email: string;
+//   private image: string;
+//   private role: string;
+//
+//   constructor(){}
+//
+//   get _id(): number {
+//     return this.id;
+//   }
+//
+//   set _id(value: number) {
+//     this.id = value;
+//   }
+//
+//   get _username(): string {
+//     return this.username;
+//   }
+//
+//   set _username(value: string) {
+//     this.username = value;
+//   }
+//
+//   get _password(): string {
+//     return this.password;
+//   }
+//
+//   set _password(value: string) {
+//     this.password = value;
+//   }
+//
+//   get _firstName(): string {
+//     return this.firstname;
+//   }
+//
+//   set _firstName(value: string) {
+//     this.firstname = value;
+//   }
+//
+//   get _lastName(): string {
+//     return this.lastname;
+//   }
+//
+//   set _lastName(value: string) {
+//     this.lastname = value;
+//   }
+//
+//   get _email(): string {
+//     return this.email;
+//   }
+//
+//   set _email(value: string) {
+//     this.email = value;
+//   }
+//
+//   get _image(): string {
+//     return this.image;
+//   }
+//
+//   set _image(value: string) {
+//     this.image = value;
+//   }
+//
+//   get _role(): string {
+//     return this.role;
+//   }
+//
+//   set _role(value: string) {
+//     this.role = value;
+//   }
+// }
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class User {
-  private _id: number;
-  private _username: string;
-  private _password: string;
-  private _firstname: string;
-  private _lastname: string;
-  private _email: string;
-  private _image: string;
-  private _role: string;
+  id: number;
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  image: string;
+  role: string;
 
   constructor(){}
-
-  get id(): number {
-    return this._id;
-  }
-
-  set id(value: number) {
-    this._id = value;
-  }
-
-  get username(): string {
-    return this._username;
-  }
-
-  set username(value: string) {
-    this._username = value;
-  }
-
-  get password(): string {
-    return this._password;
-  }
-
-  set password(value: string) {
-    this._password = value;
-  }
-
-  get firstName(): string {
-    return this._firstname;
-  }
-
-  set firstName(value: string) {
-    this._firstname = value;
-  }
-
-  get lastName(): string {
-    return this._lastname;
-  }
-
-  set lastName(value: string) {
-    this._lastname = value;
-  }
-
-  get email(): string {
-    return this._email;
-  }
-
-  set email(value: string) {
-    this._email = value;
-  }
-
-  get image(): string {
-    return this._image;
-  }
-
-  set image(value: string) {
-    this._image = value;
-  }
-
-  get role(): string {
-    return this._role;
-  }
-
-  set role(value: string) {
-    this._role = value;
-  }
 }
