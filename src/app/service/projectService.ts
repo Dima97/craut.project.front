@@ -17,4 +17,7 @@ export class ProjectService extends CoreService{
     console.log(data);
     return this.http.post(`${this.webService}sendData`, data).map((response: Response) => response);
   }
+  getProjects(){
+    return this.http.get(`${this.webService}getProjects`).map(res => res.json());
+  }
 }

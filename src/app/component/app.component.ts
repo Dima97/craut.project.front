@@ -13,7 +13,6 @@ import {OverlayContainer} from "@angular/cdk/typings/overlay";
 export class AppComponent implements OnInit{
   constructor(private translate: TranslateService) {}
   ngOnInit(){
-    localStorage.setItem("mode","day");
     localStorage.setItem("language", "ru");
     this.translate.use(localStorage.getItem("language"));
   }

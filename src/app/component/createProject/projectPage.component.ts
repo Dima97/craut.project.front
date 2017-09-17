@@ -26,10 +26,6 @@ export class ProjectPageComponent {
   updateImg(value: any) {
     this.id_image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505169254/' + value + '.jpg';
   }
-  getdata()
-  {
-    console.log("1111"+this.calendarComponent.date);
-  }
   sendData(value:any){
     this.project.image = this.id_image;
     this.projectService.sendProjectData(this.project).subscribe( error => {

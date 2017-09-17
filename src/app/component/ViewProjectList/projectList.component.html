@@ -1,0 +1,12 @@
+<form #projectListForm="ngForm" role="form" style="position:relative; top: 85px;">
+  <div class="panel">
+    <div class="panel-group">
+      <table class="table">
+        <tr *ngFor="let project of projects">
+          <td><img src="{{project.image}}" style="width: 250px; height:150px;"></td>
+          <td><a>{{project.name}}</a>{{project.purpose}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</form>

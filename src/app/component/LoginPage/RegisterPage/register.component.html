@@ -25,7 +25,7 @@
     <br>
     <div class="form-group" ngClass="{{isPasswordConfirm?'has-success':''}}">
       <input type="password" [(ngModel)]="passwordConfirm" (keyup)="checkPasswordConfirm()"
-             name="passwordConfirm" id="password-confirm" tabindex="4"
+             name="passwordConfirm" id="password-confirm"
              class="form-control" placeholder="{{'confirmPassword'|translate}}"
              #confirmpassword="ngModel" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$">
       <div [hidden]="confirmpassword.valid || confirmpassword.untouched"
@@ -37,9 +37,9 @@
   <div class="form-group">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
-        <input [disabled]="firstname.invalid||lastname.invalid||email.invalid|| nickName.invalid|| password.invalid || !form.form.valid"
+        <input [disabled]="firstname.invalid||lastname.invalid||email.invalid|| nickName.invalid|| password.invalid"
                type="submit" name="register-submit" id="login-submit" tabindex="3"
-               class="btn btn-info btn-block" onclick='register(form.value)' value="{{'REGISTER'| translate}}">
+               class="btn btn-info btn-block" value="{{'REGISTER'| translate}}">
       </div>
     </div>
   </div>
