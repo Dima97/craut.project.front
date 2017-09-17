@@ -48,5 +48,9 @@
   "ViewProject": "Info about your projects",
   "NIGHT_MODE": "Dark",
   "Admin":"Admin page",
-  "ErrorConfirm":"Confirm password not equals"
+  "ErrorConfirm":"Confirm password not equals",
+  "Block":"Block",
+  "Image":"Image",
+  "Information":"Information about user",
+  "Email":"Email"
 }

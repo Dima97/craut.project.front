@@ -4,7 +4,8 @@
   <li><a data-toggle="tab" href="#confirm" *ngIf="user.role == 'user'">{{'ConfirmProfile'|translate}}</a></li>
   <li><a data-toggle="tab" href="#projectpage" >{{'ViewProject'|translate}}</a></li>
          <!--*ngIf="user.role == 'verifiedUser'" -->
-  <li><a data-toggle="tab" href="#admin" *ngIf="user.role == 'admin'">{{'Admin'|translate}}</a> </li>
+  <li><a data-toggle="tab" href="#admin" >{{'Admin'|translate}}</a> </li>
+  <!--*ngIf="user.role == 'admin'" -->
 </ul>
 
 <div class="tab-content">

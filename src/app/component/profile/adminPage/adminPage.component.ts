@@ -1,6 +1,7 @@
-import { Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {Project} from "../../../model/project";
 import {User} from "../../../model/user";
+import {UserService} from "../../../service/userService";
 
 
 @Component({
@@ -9,10 +10,21 @@ import {User} from "../../../model/user";
   styleUrls: ['./adminPage.component.css']
 })
 
-export class AdminPageComponent {
-  protected user:User = new User();
-  constructor() {
-    this.user = JSON.parse(localStorage.getItem("currentUser"));
-    console.log(this.user);
+export class AdminPageComponent implements OnInit{
+  // protected user:User = new User();
+  users:User[] = [];
+  constructor(private userService:UserService) {
+    // this.users = JSON.parse(localStorage.getItem("currentUser"));
+    // console.log(this.users);
+  }
+  ngOnInit(){
+    this.userService.getAll().
+      subscribe((resp: Response) =>{
+      console.log(resp);
+      for(let index in resp){
+        console.log(resp[index]);
+        this.users[index] = resp[index];
+      }
+    });
   }
 }

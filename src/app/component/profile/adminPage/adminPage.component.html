@@ -1,6 +1,39 @@
-<div *ngIf="user.role == 'admin'">
+<!--<div *ngIf="user.role == 'admin'">-->
 
-</div>
-<div *ngIf="user.role != 'admin'">
-  <app-error></app-error>
-</div>
+<!--</div>-->
+<!--<div *ngIf="user.role != 'admin'">-->
+<!--<app-error></app-error>-->
+<!--</div>-->
+<!--<form #projectListForm="ngForm" role="form" >-->
+  <!--<div class="panel">-->
+    <!--<div class="panel-group">-->
+      <!--<table class="table">-->
+        <!--<tr *ngFor="let user of users">-->
+          <!--<td><input type="checkbox" style="position:relative; width: 40px; height:40px;"><img src="{{user.image}}" style="width: 200px; height:150px;"></td>-->
+          <!--<td>{{user.firstName}} {{user.username}} {{user.lastName}}</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</form>-->
+<form #projectListForm="ngForm" role="form" >
+  <div class="panel">
+    <div class="panel-group">
+      <table class="table_dark">
+        <tr>
+          <th><button class="btn-default btn">{{'Block'|translate}}</button></th>
+          <th>{{'Image'|translate}}</th>
+          <th>{{'Information'|translate}}</th>
+          <th>{{'Email'|translate}}</th>
+        </tr>
+        <tr *ngFor="let user of users">
+          <td><input type="checkbox" style="position:relative; width: 40px; height:40px;"></td>
+          <td><img src="{{user.image}}" style="width: 200px; height:150px;"></td>
+          <td>{{user.firstName}} {{user.username}} {{user.lastName}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+      </table>
+    </div>
+  </div>
+</form>

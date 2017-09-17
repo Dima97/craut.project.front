@@ -34,5 +34,8 @@ export class UserService extends CoreService {
     return this.authHttp.post(`${this.webService}update-user`, this.user,{headers})
       .map((response: Response) => response);
   }
+  getAll(){
+    return this.http.get(`${this.webService}getUsers`).map(res =>res.json());
+  }
 
 }
