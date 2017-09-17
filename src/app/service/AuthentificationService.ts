@@ -22,7 +22,6 @@ export class AuthenticationService extends CoreService {
   login(username: string, password: string) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-
     return this.http
       .post(
         `${this.webService}login`,

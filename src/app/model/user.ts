@@ -81,7 +81,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class User {
-  id: number;
+  iduser: number;
   username: string;
   password: string;
   firstName: string;

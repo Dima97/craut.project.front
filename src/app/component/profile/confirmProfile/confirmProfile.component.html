@@ -1,4 +1,4 @@
-<form #form="ngForm" role="form">
+<form #form="ngForm" role="form" (submit)="confirmProfile(form.value)">
   <div class="confirm-page">
     <div class="panel" id="imagearea" >
 
@@ -26,7 +26,7 @@
   </div>
   <div class="container">
     <div align="center" class="createButton">
-      <input type="button" class="createProject" id="create" value="{{'Send'|translate}}">
+      <input type="submit" class="createProject" id="create" value="{{'Send'|translate}}">
     </div>
   </div>
   </div>

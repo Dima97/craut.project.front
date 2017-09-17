@@ -28,3 +28,10 @@
 .table_dark tr:hover td {
   text-decoration: underline;
 }
+.checkbox  {
+  position: absolute;
+  left: 60px;
+  content: '';
+  display: table;
+  clear: both;
+}

@@ -22,6 +22,21 @@ export class UserService extends CoreService {
     console.log("registration");
     return this.http.post(`${this.webService}registration`,user).map((response:Response) => response);
   }
+  blocking(data: number[]){
+    console.log(JSON.stringify(data));
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
+    return this.authHttp.post(`${this.webService}block`,JSON.stringify(data),{headers})
+      .map((response: Response) => response);
+  }
+  sendConfirm(image: string, additionally: string){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
+    return this.http.post(`${this.webService}confirmProfile`, JSON.stringify({image,additionally}), {headers}).
+      map((response:Response) => response);
+  }
   updateProfile(user: User) {
     var data : any ;
     data = localStorage.getItem("image");
