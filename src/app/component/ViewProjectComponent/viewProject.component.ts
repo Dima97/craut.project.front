@@ -1,5 +1,8 @@
-import { Component} from "@angular/core";
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {Project} from "../../model/project";
+import {ActivatedRoute} from "@angular/router";
+import {Subscription} from "rxjs/Subscription";
+import {ProjectService} from "../../service/projectService";
 
 @Component({
   selector: 'app-project-view',
@@ -7,6 +10,24 @@ import {Project} from "../../model/project";
   styleUrls: ['./viewProject.component.css']
 })
 
-export class ViewProjectComponent{
+export class ViewProjectComponent implements OnDestroy,OnInit{
   protected project: Project = new Project;
+  private idproject:number;
+  private subscribtion:Subscription;
+  constructor(private activateRouter: ActivatedRoute,
+              private projectService: ProjectService){
+    this.subscribtion = this.activateRouter.params.subscribe(params => this.idproject = params["idproject"]);
+
+  }
+  ngOnDestroy(){
+    this.subscribtion.unsubscribe();
+  }
+  ngOnInit(){
+    this.projectService.sendIdProject(this.idproject)
+      .subscribe(
+        data => {
+          this.project = data.json();
+          console.log(this.project);
+        })
+  }
 }

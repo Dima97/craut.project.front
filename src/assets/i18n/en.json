@@ -52,5 +52,10 @@
   "Block":"Block",
   "Image":"Image",
   "Information":"Information about user",
-  "Email":"Email"
+  "Email":"Email",
+  "DateProject":"Date for active project",
+  "MoneyProject":"Money for project",
+  "Content":"Context",
+  "Support":"Support",
+  "RatingProject":"Rating"
 }

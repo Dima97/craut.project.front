@@ -1,5 +1,5 @@
 export class Project{
-  id: number;
+  idproject: number;
   name: string;
   dwy:string;
   image:string;

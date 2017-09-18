@@ -20,4 +20,11 @@ export class ProjectService extends CoreService{
   getProjects(){
     return this.http.get(`${this.webService}getProjects`).map(res => res.json());
   }
+  getProject(){
+    return this.http.get(`${this.webService}getProject`).map(res => res.json());
+  }
+  sendIdProject(data: any){
+    console.log(data);
+    return this.authHttp.post(`${this.webService}idProject`,JSON.stringify(data)).map((response: Response) => response);
+  }
 }

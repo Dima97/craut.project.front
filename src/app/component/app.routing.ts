@@ -10,7 +10,7 @@ const appRoutes: Routes = [
   {path:'succesRegistration',component: SuccesRegistrationComponent},
   {path: 'project', component: ProjectPageComponent},
   {path: 'profile', component: profileComponent},
-  {path: 'view/project', component: ViewProjectComponent},
+  {path: 'view/project/:idproject', component: ViewProjectComponent},
   {path: '', component: ProjectListComponent},
   { path: '**', redirectTo: '/' }
 ];

@@ -1,18 +1,73 @@
 <form #form="ngForm"   role="form">
   <div class="project-page">
+    <div class="container">
+    <div class="panel panel-group">
+    <div>
+    <h1>{{project.name}}</h1>
+  </div>
     <div class="panel" id="imagearea" >
 
-      <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="photo">
+      <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="photo" style="width: 400px">
 
         <div class="panel panel-default">
-          <div class="panel-body" >
+          <div class="panel-body"  >
             <div class="media">
               <div align="center">
                 <img id="id-area-image" class="img-responsive" name="project_image" src={{project.image}}/>
-              </div>
             </div>
           </div>
+          </div></div>
+        <div id="reviewStars-input" align="center">
+          <input id="star-4" type="radio" name="reviewStars"/>
+          <label title="gorgeous" for="star-4"></label>
+
+          <input id="star-3" type="radio" name="reviewStars"/>
+          <label title="good" for="star-3"></label>
+
+          <input id="star-2" type="radio" name="reviewStars"/>
+          <label title="regular" for="star-2"></label>
+
+          <input id="star-1" type="radio" name="reviewStars"/>
+          <label title="poor" for="star-1"></label>
+
+          <input id="star-0" type="radio" name="reviewStars"/>
+          <label title="bad" for="star-0"></label>
         </div>
+        <br>
+        <br>
+        <div>
+          <label class="label-default">{{'RatingProject'|translate}}</label>
+          {{project.rating}}
+        </div><br>
+        <div>
+          <input type="button"  class="btn btn-default" id="support" value="{{'Support'|translate}}" style="width: 350px;">
+        </div>
+      </div>
+        </div>
+
+  <div>
+    <label class="label-default">{{'DateProject'|translate}}</label>
+   {{project.dwy}}
+  </div>
+  <div>
+    <label class="label-default">{{'MoneyProject'|translate}}</label>
+    {{project.money}}
+  </div>
+  <div>
+    <label class="label-default">{{'Purpose'|translate}}</label>
+    {{project.purpose}}
+  </div>
+  <div>
+    <label class="label-default">{{'Content'|translate}}</label>
+    {{project.content}}
+  </div>
+
+    <div class="container panel-group panel-body panel">
+      </div>
+        <app-comment-component></app-comment-component>
+      </div>
+      <div>
+        <input type="button"  class="btn btn-default" id="send" value="{{'Send'|translate}}" style="position:relative; top: 200px; margin-bottom: 50px; left: 10px; width: 350px;">
       </div>
     </div>
   </div>
