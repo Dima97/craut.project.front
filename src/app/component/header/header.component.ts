@@ -3,6 +3,7 @@ import { AppComponent} from '../app.component';
 import {AuthGuard} from '../../service/guards/auth.guards';
 import {User} from "../../model/user";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
+import {HeaderService} from "../../service/HeaderService";
 
 @Component({
   selector: 'app-header',
@@ -12,9 +13,11 @@ import {BehaviorSubject} from "rxjs/BehaviorSubject";
 export class HeaderComponent implements OnInit{
   mode: Boolean = false;
   currentMode:string;
+  searcheRequest:string;
   curentUser: User = new User;
   constructor(public appComponent: AppComponent,
-              protected authGuard: AuthGuard) {}
+              protected authGuard: AuthGuard,
+              private headerService:HeaderService) {}
   switchLanguage(language: string) {
     localStorage.setItem("language",language);
     this.appComponent.changeLanguage(language);
@@ -45,5 +48,9 @@ export class HeaderComponent implements OnInit{
       localStorage.setItem("mode", "day");
     }
   }
-
+  sendRequest(){
+    return this.headerService.sendSearcheRequest(this.searcheRequest).subscribe(data =>{
+      console.log(data);
+    })
+  }
 }

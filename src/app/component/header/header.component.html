@@ -26,8 +26,8 @@
   <button  class="btn btn-primary login" id="logout-button-header" *ngIf="authGuard.isActivate() == true" data-toggle="modal"
           data-target="#openLogout">{{'Logout'|translate}}  <span class="glyphicon glyphicon-log-out" ></span></button>
   <div class="search">
-    <input name="query" type="text" class="search-query txt-field" placeholder="{{'inpsearche'|translate}}">
-    <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
+    <input name="query" type="text" class="search-query txt-field" [(ngModel)]="searcheRequest" placeholder="{{'inpsearche'|translate}}">
+    <button type="submit" (click)="sendRequest()"><span class="glyphicon glyphicon-search"></span></button>
   </div>
 </div>
 </nav>

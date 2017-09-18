@@ -46,6 +46,8 @@ import {ValidationData} from "../service/validationData";
 import {ViewProjectComponent} from "./ViewProjectComponent/viewProject.component";
 import {ProjectService} from "../service/projectService";
 import {ProjectListComponent} from "./ViewProjectList/projectList.component";
+import {HeaderService} from "../service/HeaderService";
+import {SearcheResultComponent} from "./SearcheResult/searcheResult.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -74,7 +76,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AdminPageComponent,
     ErrorAccesComponent,
     ViewProjectComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    SearcheResultComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +109,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AuthenticationService,
     ValidationData,
     ProjectService,
-    CalendarComponent
+    CalendarComponent,
+    HeaderService
     // appRouting
   ],
   bootstrap: [ AppComponent]
