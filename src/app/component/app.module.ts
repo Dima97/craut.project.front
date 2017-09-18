@@ -44,7 +44,6 @@ import {AdminPageComponent} from "./profile/adminPage/adminPage.component";
 import {ErrorAccesComponent} from "./Error/errorAcces/errorAcces.component";
 import {ValidationData} from "../service/validationData";
 import {ViewProjectComponent} from "./ViewProjectComponent/viewProject.component";
-import {CommentComponent} from "./ViewProjectComponent/commentComponent/comment.component";
 import {ProjectService} from "../service/projectService";
 import {ProjectListComponent} from "./ViewProjectList/projectList.component";
 
@@ -75,7 +74,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AdminPageComponent,
     ErrorAccesComponent,
     ViewProjectComponent,
-    CommentComponent,
     ProjectListComponent
   ],
   imports: [

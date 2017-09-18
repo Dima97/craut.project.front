@@ -14,6 +14,7 @@ export class ViewProjectComponent implements OnDestroy,OnInit{
   protected project: Project = new Project;
   private idproject:number;
   private subscribtion:Subscription;
+  protected comment: string;
   constructor(private activateRouter: ActivatedRoute,
               private projectService: ProjectService){
     this.subscribtion = this.activateRouter.params.subscribe(params => this.idproject = params["idproject"]);
@@ -29,5 +30,9 @@ export class ViewProjectComponent implements OnDestroy,OnInit{
           this.project = data.json();
           console.log(this.project);
         })
+  }
+  sendComment(data:any){
+    console.log(this.comment);
+    this.projectService.sendComment(this.comment, this.project.idproject).subscribe(data =>{console.log(data)})
   }
 }

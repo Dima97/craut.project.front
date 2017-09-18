@@ -40,11 +40,10 @@
           {{project.rating}}
         </div><br>
         <div>
-          <input type="button"  class="btn btn-default" id="support" value="{{'Support'|translate}}" style="width: 350px;">
+          <input type="button"  class="btn btn-default" id="support" [(ngModel)]="comment" value="{{'Support'|translate}}" style="width: 350px;"/>
         </div>
       </div>
         </div>
-
   <div>
     <label class="label-default">{{'DateProject'|translate}}</label>
    {{project.dwy}}
@@ -64,10 +63,10 @@
 
     <div class="container panel-group panel-body panel">
       </div>
-        <app-comment-component></app-comment-component>
+      <textarea class="textarea" ></textarea>
       </div>
       <div>
-        <input type="button"  class="btn btn-default" id="send" value="{{'Send'|translate}}" style="position:relative; top: 200px; margin-bottom: 50px; left: 10px; width: 350px;">
+        <input type="button"  class="btn btn-default" id="send" (click)="sendComment(form.value)" value="{{'Send'|translate}}" style="position:relative; top: 200px; margin-bottom: 50px; left: 10px; width: 350px;">
       </div>
     </div>
   </div>
