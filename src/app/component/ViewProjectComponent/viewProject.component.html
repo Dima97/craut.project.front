@@ -36,28 +36,32 @@
         <br>
         <br>
         <div>
-          <label class="label-default">{{'RatingProject'|translate}}</label>
+          <label class="label-style">{{'RatingProject'|translate}}</label>
           {{project.rating}}
         </div><br>
         <div>
-          <input type="button"  class="btn btn-default" id="support" value="{{'Support'|translate}}" style="width: 350px;"/>
+           <button  class="btn-default btn" data-toggle="modal"
+                   data-target="#openModalTransfer" > {{'Support'|translate}}</button>
+        </div>
+        <div id="openModalTransfer" class="modal fade" aria-labelledby="openModalTransfer" tabindex="-1" aria-hidden="true" role="dialog"  >
+          <app-pay-project [moneyForProject]="project.idproject"></app-pay-project>
         </div>
       </div>
         </div>
   <div>
-    <label class="label-default">{{'DateProject'|translate}}</label>
+    <label class="label-style">{{'DateProject'|translate}}</label>
    {{project.dwy}}
   </div>
   <div>
-    <label class="label-default">{{'MoneyProject'|translate}}</label>
+    <label class="label-style">{{'MoneyProject'|translate}}</label>
     {{project.money}}
   </div>
   <div>
-    <label class="label-default">{{'Purpose'|translate}}</label>
+    <label class="label-style"> {{'Purpose'|translate}}</label>
     {{project.purpose}}
   </div>
   <div>
-    <label class="label-default">{{'Content'|translate}}</label>
+    <label class="label-style">{{'Content'|translate}}</label>
     {{project.content}}
   </div>
 
@@ -66,7 +70,7 @@
       <textarea class="textarea" [(ngModel)]="comment" [ngModelOptions]="{standalone: true}">></textarea>
       </div>
       <div>
-        <input type="button"  class="btn btn-default" id="send" (click)="sendComment(form.value)" value="{{'Send'|translate}}" style="position:relative; top: 200px; margin-bottom: 50px; left: 10px; width: 350px;">
+        <input type="button" class="btn btn-default" id="send" (click)="sendComment(form.value)" value="{{'Send'|translate}}" style="position:relative; top: 200px; margin-bottom: 50px; left: 10px; width: 350px;">
       </div>
     </div>
   </div>

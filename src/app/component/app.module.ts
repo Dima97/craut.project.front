@@ -48,6 +48,9 @@ import {ProjectService} from "../service/projectService";
 import {ProjectListComponent} from "./ViewProjectList/projectList.component";
 import {HeaderService} from "../service/HeaderService";
 import {SearcheResultComponent} from "./SearcheResult/searcheResult.component";
+import {ContanerForProjectComponent} from "./ViewProjectList/OneProjectFromList/contanerForProject.component";
+import {MessageComponent} from "./profile/MessagePage/Message.component";
+import {PayProjectComponent} from "./ViewProjectComponent/PayProject/payProject.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -77,7 +80,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ErrorAccesComponent,
     ViewProjectComponent,
     ProjectListComponent,
-    SearcheResultComponent
+    SearcheResultComponent,
+    ContanerForProjectComponent,
+    MessageComponent,
+    PayProjectComponent
   ],
   imports: [
     BrowserModule,

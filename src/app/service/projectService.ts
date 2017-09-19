@@ -22,10 +22,16 @@ export class ProjectService extends CoreService{
   }
   sendIdProject(data: any){
     console.log(data);
-    return this.authHttp.post(`${this.webService}idProject`,JSON.stringify(data)).map((response: Response) => response);
+    return this.authHttp.post(`${this.webService}idProject`,JSON.stringify(data))
+      .map((response: Response) => response);
   }
   sendComment(comment: string, idproject:number){
-    console.log("dfsdfcsd"+comment,idproject);
-    return this.http.post(`${this.webService}comment`, JSON.stringify({comment, idproject})).map((response:Response)=>response);
+    console.log(comment,idproject);
+    return this.http.post(`${this.webService}comment`, JSON.stringify({comment, idproject}))
+      .map((response:Response)=>response);
+  }
+  sendMoneyForProject(idProject:number,money:number){
+    return this.http.post(`${this.webService}projectMoney`, JSON.stringify({idProject,money}))
+      .map((response:Response)=>response);
   }
 }

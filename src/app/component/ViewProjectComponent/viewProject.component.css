@@ -77,7 +77,10 @@
 }
 .textarea{
   position: absolute;
-  width: 1000px;
+  width: 1140px;
   height:200px;
 }
-
+.label-style{
+  font-family: Tahoma;
+  font-size: medium;
+}

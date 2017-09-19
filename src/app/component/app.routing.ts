@@ -6,6 +6,7 @@ import {SuccesRegistrationComponent} from "./succesfulRegistration/succesRegistr
 import {ViewProjectComponent} from "./ViewProjectComponent/viewProject.component";
 import {ProjectListComponent} from "./ViewProjectList/projectList.component";
 import {SearcheResultComponent} from "./SearcheResult/searcheResult.component";
+import {PayProjectComponent} from "./ViewProjectComponent/PayProject/payProject.component";
 
 const appRoutes: Routes = [
   {path:'succesRegistration',component: SuccesRegistrationComponent},
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
   {path: 'profile', component: profileComponent},
   {path: 'view/project/:idproject', component: ViewProjectComponent},
   {path: 'searcheResults', component: SearcheResultComponent},
+  {path: 'transferMoney', component: PayProjectComponent},
   {path: '', component: ProjectListComponent},
   { path: '**', redirectTo: '/' }
 ];

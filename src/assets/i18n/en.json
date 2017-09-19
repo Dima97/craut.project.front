@@ -41,7 +41,7 @@
   "ChooseMoney":"Select",
   "Create":"Create",
   "Drag":"Or drag and drop files below",
-  "Purpose":"Purpose",
+  "Purpose":"Purpose: ",
   "ConfirmProfile":"Confirm profile",
   "Additionally":"Additionally",
   "Send":"Send",
@@ -53,9 +53,15 @@
   "Image":"Image",
   "Information":"Information about user",
   "Email":"Email",
-  "DateProject":"Date for active project",
-  "MoneyProject":"Money for project",
-  "Content":"Context",
+  "DateProject":"Date for active project: ",
+  "MoneyProject":"Money for project: ",
+  "Content":"Context: ",
   "Support":"Support",
-  "RatingProject":"Rating"
+  "RatingProject":"Rating",
+  "Theme":"Theme message",
+  "Text":"Text message",
+  "Message":"Messages",
+  "HelpProject":"Money transfer for project maintenance.",
+  "SendMoney":"Support project",
+  "MuchMoney":"Enter amount of money"
 }

@@ -1,5 +1,7 @@
-<app-image-area></app-image-area>
+
 <form class="register-form" #form="ngForm" (ngSubmit)="updateProfile(form.value)" role="form" style="display: inline">
+  <div class="container">
+    <app-image-area></app-image-area>
   <div class="form-group">
     <input type="text" [(ngModel)]="user.firstName" name="firstname"
            id="firstname" class="form-control" value=""
@@ -42,6 +44,7 @@
                type="submit" name="save-submit" id="save-submit" tabindex="3"
                class="btn btn-success btn-block" value="{{'SAVE'| translate}}">
       </div>
+  </div>
   </div>
   </div>
 </form>

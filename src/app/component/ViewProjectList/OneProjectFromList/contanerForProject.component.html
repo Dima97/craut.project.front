@@ -1,0 +1,21 @@
+<form #form="ngForm" role="form">
+  <div class="container" style="width: 600px; height:500px;">
+    <div class="panel panel-default" style="height:480px;">
+      <div class="panel-heading" >
+        <h1><a [routerLink]="['view/project', project.idproject]">{{project.name}}</a></h1>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+        <img src="{{project.image}}" style="width: 250px; height:150px;">
+          </div>
+          <div class="col-md-5">
+            <p>{{'Purpose'|translate}}:{{project.purpose}}</p>
+            <p>{{'MoneyProject'|translate}}:{{project.money}}</p>
+          <p>{{'DateProject'|translate}}:{{project.dwy}}</p>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</form>

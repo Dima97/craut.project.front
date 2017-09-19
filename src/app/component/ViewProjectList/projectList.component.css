@@ -1,0 +1,9 @@
+.panel-group {
+
+margin-bottom: 20px;
+display: inline-flex;
+  flex-wrap: wrap;
+}
+.container{
+  width:1400px;
+}
