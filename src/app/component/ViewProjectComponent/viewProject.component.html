@@ -67,7 +67,7 @@
 
     <div class="panel-group panel-body panel">
       </div>
-      <textarea class="textarea" [(ngModel)]="comment" [ngModelOptions]="{standalone: true}">></textarea>
+      <textarea class="textarea" [(ngModel)]="comment.comment" [ngModelOptions]="{standalone: true}">></textarea>
       </div>
       <div>
         <input type="button" class="btn btn-default" id="send" (click)="sendComment(form.value)" value="{{'Send'|translate}}" style="position:relative; top: 200px; margin-bottom: 50px; left: 10px; width: 350px;">

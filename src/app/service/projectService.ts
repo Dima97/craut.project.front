@@ -4,6 +4,7 @@ import {Project} from "../model/project";
 import {Http,Response} from "@angular/http";
 import { AuthHttp } from 'angular2-jwt';
 import {HttpClient} from "@angular/common/http";
+import {Comments} from "../model/comments";
 
 @Injectable()
 export class ProjectService extends CoreService{
@@ -22,12 +23,11 @@ export class ProjectService extends CoreService{
   }
   sendIdProject(data: any){
     console.log(data);
-    return this.authHttp.post(`${this.webService}idProject`,JSON.stringify(data))
-      .map((response: Response) => response);
+    return this.authHttp.post(`${this.webService}idProject`,JSON.stringify(data)).map((response: Response) => response);
   }
-  sendComment(comment: string, idproject:number){
-    console.log(comment,idproject);
-    return this.http.post(`${this.webService}comment`, JSON.stringify({comment, idproject}))
+  sendComment(comment: Comments){
+    console.log(comment);
+    return this.http.post(`${this.webService}comment`, JSON.stringify({comment}))
       .map((response:Response)=>response);
   }
   sendMoneyForProject(idProject:number,money:number){

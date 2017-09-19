@@ -35,7 +35,7 @@ export class AdminPageComponent implements OnInit{
     var i:number = 0;
     for (let index in this.block){
       if(this.block[index] == true){
-        this.blockedList[i++] = this.users[index].iduser;
+        this.blockedList[i++] = this.users[index].id;
       }
     }
     console.log(this.blockedList);
