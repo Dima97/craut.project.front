@@ -41,4 +41,8 @@ export class ViewProjectComponent implements OnDestroy,OnInit{
     console.log(this.comment);
     this.projectService.sendComment(this.comment).subscribe(data =>{console.log(data)})
   }
+  rating(rating:number){
+    console.log("rating suka");
+    this.projectService.sendRating(rating,this.idproject).subscribe(data =>{console.log(data)})
+  }
 }

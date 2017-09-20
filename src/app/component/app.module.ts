@@ -51,6 +51,7 @@ import {SearcheResultComponent} from "./SearcheResult/searcheResult.component";
 import {ContanerForProjectComponent} from "./ViewProjectList/OneProjectFromList/contanerForProject.component";
 import {MessageComponent} from "./profile/MessagePage/Message.component";
 import {PayProjectComponent} from "./ViewProjectComponent/PayProject/payProject.component";
+import { TagInputModule } from 'ngx-chips';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -87,6 +88,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     DropdownModule,
     FormsModule,
     CommonModule,
@@ -95,6 +97,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     Ng2CloudinaryModule,
     FileUploadModule,
+    TagInputModule,
     DatePickerModule,
     TranslateModule.forRoot({
       loader: {
@@ -117,7 +120,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProjectService,
     CalendarComponent,
     HeaderService
-    // appRouting
   ],
   bootstrap: [ AppComponent]
 })

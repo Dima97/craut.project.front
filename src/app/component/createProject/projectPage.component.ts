@@ -5,6 +5,7 @@ import {ProjectService} from "../../service/projectService";
 import {CalendarComponent} from "./calendar/calendar.component";
 import {DateModel} from "ng2-datepicker";
 import {AuthGuard} from "../../service/guards/auth.guards";
+import {Tags} from "../../model/tags";
 
 @Component({
   selector: 'app-project-page',
@@ -17,6 +18,7 @@ export class ProjectPageComponent {
   id_image: any;
   calendar:DateModel;
   loading = false;
+  tags:string[];
   errorMessage: string;
   constructor(private projectService:ProjectService,
               protected calendarComponent:CalendarComponent,
@@ -28,9 +30,9 @@ export class ProjectPageComponent {
   }
   sendData(value:any){
     this.project.image = this.id_image;
-    this.projectService.sendProjectData(this.project).subscribe( error => {
+    this.projectService.sendProjectData(this.project, this.tags).subscribe( error => {
       this.loading = false;
-      // console.log(this.errorMessage = error);
     });
+    // this.projectService.sendTags(this.tags).subscribe( error => {console.log(this.errorMessage)})
   }
 }

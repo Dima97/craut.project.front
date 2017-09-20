@@ -6,4 +6,6 @@ import { Component} from "@angular/core";
   styleUrls:['./Message.component.css']
 })
 
-export class MessageComponent{}
+export class MessageComponent{
+
+}

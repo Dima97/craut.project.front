@@ -14,7 +14,7 @@ export class RegisterComponent {
   protected user: User = new User();
   isPasswordConfirm = false;
   passwordConfirm: string;
-  protected error: string;
+  protected errorMessage: string;
   form: FormGroup;
   formErrors = {
     passwordConfirm: ''
@@ -38,7 +38,10 @@ export class RegisterComponent {
   register(data: any) {
     this.userService.register(this.user).subscribe(data => {
       console.log(data);
-    })
+    },
+      error =>{
+        console.log(this.errorMessage = error.json().message);
+      })
     // location.href='/';
   }
 }

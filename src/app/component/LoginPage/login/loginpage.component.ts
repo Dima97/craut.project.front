@@ -40,7 +40,7 @@ export class LoginPageComponent{
         },
         error => {
           this.loading = false;
-          console.log(this.errorMessage = error);
+          console.log(this.errorMessage = error.json().message);
         }
       );
   }
