@@ -63,5 +63,8 @@
   "Message":"Messages",
   "HelpProject":"Money transfer for project maintenance.",
   "SendMoney":"Support project",
-  "MuchMoney":"Enter amount of money"
+  "MuchMoney":"Enter amount of money",
+  "BlockAccount":"Your account blocked",
+  "Delete":"Delete",
+  "UnBlock":"Unblock"
 }

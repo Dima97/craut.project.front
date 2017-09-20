@@ -30,6 +30,14 @@ export class UserService extends CoreService {
     return this.authHttp.post(`${this.webService}block`,JSON.stringify(data),{headers})
       .map((response: Response) => response);
   }
+  deleting(data: number[]){
+    console.log(JSON.stringify(data));
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
+    return this.authHttp.post(`${this.webService}delete`,JSON.stringify(data),{headers})
+      .map((response: Response) => response);
+  }
   sendConfirm(image: string, additionally: string){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

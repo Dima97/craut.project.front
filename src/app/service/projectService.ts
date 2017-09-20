@@ -14,10 +14,10 @@ export class ProjectService extends CoreService{
               private authHttp: AuthHttp){
     super();
   }
-  sendProjectData(data: any, tags:string[]){
-    data.dwy=data.dwy.formatted;
-    console.log(data,tags);
-    return this.authHttp.post(`${this.webService}sendData`, JSON.stringify({data,tags})).map((response: Response) => response);
+  sendProjectData(projectRequestDto: any, tags:string[]){
+    projectRequestDto.dwy=projectRequestDto.dwy.formatted;
+    console.log(projectRequestDto,tags);
+    return this.authHttp.post(`${this.webService}sendData`, JSON.stringify({projectRequestDto,tags})).map((response: Response) => response);
   }
   getProjects(){
     return this.http.get(`${this.webService}getProjects`).map(res => res.json());

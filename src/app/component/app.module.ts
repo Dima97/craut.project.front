@@ -52,6 +52,7 @@ import {ContanerForProjectComponent} from "./ViewProjectList/OneProjectFromList/
 import {MessageComponent} from "./profile/MessagePage/Message.component";
 import {PayProjectComponent} from "./ViewProjectComponent/PayProject/payProject.component";
 import { TagInputModule } from 'ngx-chips';
+import {BlockAccountComponent} from "./Error/BlockedAccount/blockAccount.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -84,7 +85,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SearcheResultComponent,
     ContanerForProjectComponent,
     MessageComponent,
-    PayProjectComponent
+    PayProjectComponent,
+    BlockAccountComponent
   ],
   imports: [
     BrowserModule,

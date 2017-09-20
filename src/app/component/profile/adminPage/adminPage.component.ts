@@ -13,7 +13,7 @@ import {variable} from "@angular/compiler/src/output/output_ast";
 
 export class AdminPageComponent implements OnInit{
   users:User[] = [];
-  block:boolean[] =[];
+  block:boolean;
   blockedList: number[] = [];
   constructor(private userService:UserService) {
   }
@@ -24,21 +24,27 @@ export class AdminPageComponent implements OnInit{
       for(let index in resp){
         console.log(resp[index]);
         this.users[index] = resp[index];
-        this.block[index] = false;
       }
     });
   }
   blockedCheckbox(index: number){
-    this.block[index] = true;
-  }
-  blocked(data:any){
-    var i:number = 0;
-    for (let index in this.block){
-      if(this.block[index] == true){
-        this.blockedList[i++] = this.users[index].id;
-      }
+    if(this.blockedList.indexOf(index) != -1) {
+      console.log("del "+index);
+      this.blockedList.splice(this.blockedList.indexOf(index),1);
     }
+    else {
+      console.log("add "+index);
+      this.blockedList.push(index);
+    }
+  }
+  blocked(choose:number){
+    this.blockedList.unshift(choose);
     console.log(this.blockedList);
     this.userService.blocking(this.blockedList).subscribe(data =>{ console.log(data);})
+    this.blockedList.splice(0,1);
   }
+  // delete(){
+  //   console.log(this.blockedList);
+  //   this.userService.deleting(this.blockedList).subscribe(data =>{ console.log(data);})
+  // }
 }
