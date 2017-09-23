@@ -39,12 +39,7 @@ export class ViewProjectComponent implements OnDestroy,OnInit{
         })
   }
   switched(tag:string){
-    // this.router.navigate(['/searcheResults/' + tag]);
-  }
-  sendRequestByTags(tag:string){
-    this.projectService.getProjectByTags(tag).subscribe(data =>{
-      this.projects = data.json();
-    });
+    location.href='/searcheResults/'+tag;
   }
   sendComment(data:any){
     this.comment.idproject = this.idproject;

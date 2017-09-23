@@ -1,1 +1,12 @@
-nvkqeljnbk;ajsndvksnlvkmakvmlaskdvlksndvlksdnvlksdnvlksdnv
+<form #form="ngForm" role="form">
+  <div class="contaner" style="position:relative;top: 80px;">
+    <div class="panel panel-default">
+    <table class="table">
+      <tr *ngFor="let project of projects">
+        <td><img src="{{project.image}}" style="width: 100px; height: 100px;">{{project.name}}</td>
+        <td>{{project.purpose}}{{project.tags}}</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+</form>

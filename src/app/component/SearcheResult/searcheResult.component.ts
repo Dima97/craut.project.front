@@ -3,6 +3,7 @@ import {Project} from "../../model/project";
 import {Subscription} from "rxjs/Subscription";
 import {ActivatedRoute} from "@angular/router";
 import {ProjectService} from "../../service/projectService";
+import {sendRequest} from "selenium-webdriver/http";
 
 @Component({
   selector: 'app-searche-result',
@@ -11,6 +12,7 @@ import {ProjectService} from "../../service/projectService";
 })
 
 export class SearcheResultComponent implements OnDestroy,OnInit{
+  protected projects:Project[] = [];
   private request:string;
   private subscribtion:Subscription;
   constructor(private activateRouter: ActivatedRoute,
@@ -21,5 +23,11 @@ export class SearcheResultComponent implements OnDestroy,OnInit{
     this.subscribtion.unsubscribe();
   }
   ngOnInit(){
+    this.sendRequestByTags(this.request);
+  }
+  sendRequestByTags(tag:string){
+    this.projectService.getProjectByTags(tag).subscribe(data =>{
+      this.projects = data.json();
+    });
   }
 }
