@@ -12,9 +12,9 @@ const appRoutes: Routes = [
   {path:'succesRegistration',component: SuccesRegistrationComponent},
   {path: 'project', component: ProjectPageComponent},
   {path: 'profile', component: profileComponent},
-  {path: 'view/project/:idproject', component: ViewProjectComponent},
-  {path: 'searcheResults', component: SearcheResultComponent},
   {path: 'transferMoney', component: PayProjectComponent},
+  {path: 'view/project/:idproject', component: ViewProjectComponent},
+  {path: 'searcheResults/:request', component: SearcheResultComponent},
   {path: '', component: ProjectListComponent},
   { path: '**', redirectTo: '/' }
 ];

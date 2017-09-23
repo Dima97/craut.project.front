@@ -54,7 +54,6 @@ import {PayProjectComponent} from "./ViewProjectComponent/PayProject/payProject.
 import { TagInputModule } from 'ngx-chips';
 import {BlockAccountComponent} from "./Error/BlockedAccount/blockAccount.component";
 
-
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }

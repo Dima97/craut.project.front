@@ -66,5 +66,9 @@
   "MuchMoney":"Enter amount of money",
   "BlockAccount":"Your account blocked",
   "Delete":"Delete",
-  "UnBlock":"Unblock"
+  "UnBlock":"Unblock",
+  "Relevant":"By relevant",
+  "DateSort":"By date",
+  "Sort":"Sort",
+  "Tags":"Tags: "
 }

@@ -6,7 +6,7 @@ export function authHttpUserFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
     tokenName: 'token',
     // tokenGetter: (() => JSON.parse(localStorage.getItem('currentUser')).token.split(' ')[1]),
-    headerPrefix: 'Bearer',
+    // headerPrefix: 'Bearer',
     globalHeaders: [{'Content-Type': 'application/json'}],
     headerName: 'Authorization',
     noJwtError: true

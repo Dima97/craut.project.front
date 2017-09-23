@@ -1,7 +1,7 @@
 
 <form class="register-form" #form="ngForm" (ngSubmit)="updateProfile(form.value)" role="form" style="display: inline">
   <div class="container">
-    <app-image-area></app-image-area>
+    <app-image-area [image]="user.image"></app-image-area>
   <div class="form-group">
     <input type="text" [(ngModel)]="user.firstName" name="firstname"
            id="firstname" class="form-control" value=""
@@ -20,7 +20,7 @@
            placeholder="{{'newNick'|translate}}"  #nickName="ngModel" required>
     <br>
     <input type="password" [(ngModel)]="user.password" name="password"
-           id="password" class="form-control" value="confirmpas"
+           id="password" class="form-control" value=""
            placeholder="{{'newpassword'|translate}}"
            #password="ngModel" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$" >
     <div [hidden]="password.valid || password.untouched"

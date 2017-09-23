@@ -1,10 +1,11 @@
 import {Component, OnDestroy, OnInit} from "@angular/core";
 import {Project} from "../../model/project";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 import {ProjectService} from "../../service/projectService";
 import {User} from "../../model/user";
 import {Comments} from "../../model/comments";
+import {ResponseProjectAndTags} from "../../model/ResponseProjectAndTags";
 
 @Component({
   selector: 'app-project-view',
@@ -14,11 +15,14 @@ import {Comments} from "../../model/comments";
 
 export class ViewProjectComponent implements OnDestroy,OnInit{
   protected project: Project = new Project;
+  protected projectAndTagsResponse:ResponseProjectAndTags;
+  protected tags:string[];
+  protected projects:Project[] = [];
   private idproject:number;
   private user:User = new User();
   private subscribtion:Subscription;
   protected comment:Comments = new Comments();
-  constructor(private activateRouter: ActivatedRoute,
+  constructor(private  router:Router,private activateRouter: ActivatedRoute,
               private projectService: ProjectService){
     this.subscribtion = this.activateRouter.params.subscribe(params => this.idproject = params["idproject"]);
     this.user = JSON.parse(localStorage.getItem("currentUser"));
@@ -31,9 +35,16 @@ export class ViewProjectComponent implements OnDestroy,OnInit{
     this.projectService.sendIdProject(this.idproject)
       .subscribe(
         data => {
-          this.project = data.json();
-          console.log(this.project);
+          this.projectAndTagsResponse = data.json();
         })
+  }
+  switched(tag:string){
+    // this.router.navigate(['/searcheResults/' + tag]);
+  }
+  sendRequestByTags(tag:string){
+    this.projectService.getProjectByTags(tag).subscribe(data =>{
+      this.projects = data.json();
+    });
   }
   sendComment(data:any){
     this.comment.idproject = this.idproject;
@@ -42,7 +53,6 @@ export class ViewProjectComponent implements OnDestroy,OnInit{
     this.projectService.sendComment(this.comment).subscribe(data =>{console.log(data)})
   }
   rating(rating:number){
-    console.log("rating suka");
     this.projectService.sendRating(rating,this.idproject).subscribe(data =>{console.log(data)})
   }
 }

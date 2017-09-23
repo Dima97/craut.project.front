@@ -6,6 +6,7 @@ import {CalendarComponent} from "./calendar/calendar.component";
 import {DateModel} from "ng2-datepicker";
 import {AuthGuard} from "../../service/guards/auth.guards";
 import {Tags} from "../../model/tags";
+import {stringify} from "@angular/core/src/util";
 
 @Component({
   selector: 'app-project-page',
@@ -33,6 +34,5 @@ export class ProjectPageComponent {
     this.projectService.sendProjectData(this.project, this.tags).subscribe( error => {
       this.loading = false;
     });
-    // this.projectService.sendTags(this.tags).subscribe( error => {console.log(this.errorMessage)})
   }
 }

@@ -16,12 +16,15 @@ export class ProjectListComponent implements OnInit{
   constructor( private projectService: ProjectService, private http:Http){
   }
   ngOnInit() {
-    this.projectService.getProjects()
+    this.getSortProject(0);
+  }
+  getSortProject(data: number){
+    this.projectService.getProjects(data)
       .subscribe((resp: Response) => {
         console.log(resp);
         for(let index in resp){
           console.log(resp[index]);
-          this.projects[index] = resp[index];
+          this.projects[index]= resp[index];
         }
       });
   }

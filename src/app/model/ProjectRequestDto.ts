@@ -1,4 +1,4 @@
-export class Project{
+export class ProjectRequestDto{
   idproject: number;
   name: string;
   dwy:string;
@@ -7,5 +7,4 @@ export class Project{
   content:string;
   purpose:string;
   money:number;
-  tags:string[];
 }

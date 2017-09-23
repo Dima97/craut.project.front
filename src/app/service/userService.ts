@@ -19,8 +19,11 @@ export class UserService extends CoreService {
     super();
   }
   register(user: User){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
     console.log("registration");
-    return this.http.post(`${this.webService}registration`,user).map((response:Response) => response);
+    return this.http.post(`${this.webService}registration`,user,{headers}).map((response:Response) => response);
   }
   blocking(data: number[]){
     console.log(JSON.stringify(data));
@@ -58,7 +61,7 @@ export class UserService extends CoreService {
       .map((response: Response) => response);
   }
   getAll(){
-    return this.http.get(`${this.webService}getUsers`).map(res =>res.json());
+    return this.authHttp.get(`${this.webService}getUsers`).map(res =>res.json());
   }
 
 }
