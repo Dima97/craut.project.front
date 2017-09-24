@@ -25,11 +25,7 @@ export class ProjectService extends CoreService{
     return this.authHttp.post(`${this.webService}getProjects`,data).map(res => res.json());
   }
   sendIdProject(data: any){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME))
-    console.log(data);
-    return this.authHttp.post(`${this.webService}idProject`,JSON.stringify(data),{headers}).map((response: Response) => response);
+    return this.authHttp.post(`${this.webService}idProject`,data).map(res => res.json());
   }
   sendComment(comment: Comments){
     console.log(comment);

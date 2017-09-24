@@ -24,6 +24,7 @@ export class EditProfileComponent {
   constructor (private userService: UserService,
                private imageComponent: ImageComponent,
                private validationService: ValidationData) {
+    this.user.image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505169795/sy6afdedllqhpbh8zebq.jpg';
   }
   static setErrors(answer: string) {
     return answer === null;
@@ -33,9 +34,14 @@ export class EditProfileComponent {
     this.isPasswordConfirm = EditProfileComponent.setErrors(this.formErrors.passwordConfirm);
   }
   updateProfile(data: any) {
-    console.log(this.user);
+    console.log(this.user.image);
     this.userService.updateProfile(this.user).subscribe(data => {
-      console.log(data);
+      console.log(this.user);
+      localStorage.setItem("currentUser",JSON.stringify(this.user));
     });
+  }
+  updateImg(value: any){
+    this.user.image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505169254/' + value + '.jpg';
+    localStorage.setItem("image",this.user.image);
   }
 }

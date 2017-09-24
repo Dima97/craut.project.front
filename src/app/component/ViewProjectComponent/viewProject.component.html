@@ -1,9 +1,9 @@
-<form #form="ngForm"   role="form">
+<form #form="ngForm"   role="form" *ngIf="projectAndTagsResponse">
   <div class="project-page">
     <div class="container">
     <div class="panel panel-group">
     <div>
-    <h1>{{projectAndTagsResponse.projectRequestDto.name}}</h1>
+    <h1>{{projectRequestDto.name}}</h1>
   </div>
     <div class="panel" id="imagearea" >
 
@@ -13,7 +13,7 @@
           <div class="panel-body"  >
             <div class="media">
               <div align="center">
-                <img id="id-area-image" class="img-responsive" name="project_image" src={{projectAndTagsResponse.projectRequestDto.image}}/>
+                <img id="id-area-image" class="img-responsive" name="project_image" src="{{projectRequestDto.image}}"/>
             </div>
           </div>
           </div></div>
@@ -37,28 +37,28 @@
         <br>
         <div>
           <label class="label-style">{{'RatingProject'|translate}}</label>
-          {{projectAndTagsResponse.projectRequestDto.rating}}
+          {{projectRequestDto.rating}}
         </div><br>
         <div>
            <button  class="btn-default btn" data-toggle="modal"
                    data-target="#openModalTransfer" > {{'Support'|translate}}</button>
         </div>
         <div id="openModalTransfer" class="modal fade" aria-labelledby="openModalTransfer" tabindex="-1" aria-hidden="true" role="dialog"  >
-          <app-pay-project [moneyForProject]="projectAndTagsResponse.projectRequestDto.idproject"></app-pay-project>
+          <app-pay-project [moneyForProject]="idProject"></app-pay-project>
         </div>
       </div>
         </div>
   <div>
     <label class="label-style">{{'DateProject'|translate}}</label>
-   {{projectAndTagsResponse.projectRequestDto.dwy}}
+   {{projectRequestDto.dwy}}
   </div>
   <div>
     <label class="label-style">{{'MoneyProject'|translate}}</label>
-    {{projectAndTagsResponse.projectRequestDto.money}}
+    {{projectRequestDto.money}}
   </div>
   <div>
     <label class="label-style"> {{'Purpose'|translate}}</label>
-    {{projectAndTagsResponse.projectRequestDto.purpose}}
+    {{projectRequestDto.purpose}}
   </div>
       <div>
         <label class="label-style"> {{'Tags'|translate}}</label>
@@ -66,15 +66,15 @@
       </div>
   <div>
     <label class="label-style">{{'Content'|translate}}</label>
-    {{projectAndTagsResponse.projectRequestDto.content}}
+    {{projectRequestDto.content}}
   </div>
     <div class="panel-group panel-body panel">
       </div>
       <table class="table">
-        <tr *ngFor="let comment of projectAndTagsResponse.comments.comment, let idx = index">
-          <td><img src="{{projectAndTagsResponse.comments.user[idx].image}}   " class="round" style="width: 100px; height:100px;">
-            {{projectAndTagsResponse.comments.user[idx].userName}}</td>
-          <td >{{comment}}</td>
+        <tr *ngFor="let comm of projectAndTagsResponse.comment, let idx = index">
+          <td><img src="{{projectAndTagsResponse.user[idx].image}}   " class="round" style="width: 100px; height:100px;">
+            {{projectAndTagsResponse.user[idx].userName}}</td>
+          <td >{{comm}}</td>
         </tr>
       </table>
       <textarea class="textarea" [(ngModel)]="comment.comment" [ngModelOptions]="{standalone: true}"></textarea>

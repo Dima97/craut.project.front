@@ -13,7 +13,7 @@
       {{'IncorrectEmail'|translate}}
     </div>
     <br>
-    <input type="text" [(ngModel)]="user.username" name="nickName" id="nickName" class="form-control" value=""
+    <input type="text" [(ngModel)]="user.userName" name="nickName" id="nickName" class="form-control" value=""
     placeholder="{{'Nick'|translate}}" (input)="checkNick()" #nickName="ngModel" required>
     <br>
     <input type="password" [(ngModel)]="user.password" name="password"

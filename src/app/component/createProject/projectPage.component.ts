@@ -5,7 +5,7 @@ import {ProjectService} from "../../service/projectService";
 import {CalendarComponent} from "./calendar/calendar.component";
 import {DateModel} from "ng2-datepicker";
 import {AuthGuard} from "../../service/guards/auth.guards";
-import {Tags} from "../../model/tags";
+// import {Tags} from "../../model/tags";
 import {stringify} from "@angular/core/src/util";
 
 @Component({

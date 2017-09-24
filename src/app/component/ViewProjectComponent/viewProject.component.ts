@@ -5,7 +5,9 @@ import {Subscription} from "rxjs/Subscription";
 import {ProjectService} from "../../service/projectService";
 import {User} from "../../model/user";
 import {Comments} from "../../model/comments";
-import {ResponseProjectAndTags} from "../../model/ResponseProjectAndTags";
+import {ProjectAndTagsRequestDto} from "../../model/ProjectAndTagsRequestDto";
+import {ProjectRequestDto} from "../../model/ProjectRequestDto";
+
 
 @Component({
   selector: 'app-project-view',
@@ -15,28 +17,43 @@ import {ResponseProjectAndTags} from "../../model/ResponseProjectAndTags";
 
 export class ViewProjectComponent implements OnDestroy,OnInit{
   protected project: Project = new Project;
-  protected projectAndTagsResponse:ResponseProjectAndTags;
+  protected projectAndTagsResponse:ProjectAndTagsRequestDto;
+  protected projectRequestDto: ProjectRequestDto;
+  protected name:string;
   protected tags:string[];
-  protected projects:Project[] = [];
-  private idproject:number;
+  protected idproject:number;
   private user:User = new User();
   private subscribtion:Subscription;
   protected comment:Comments = new Comments();
+
+
   constructor(private  router:Router,private activateRouter: ActivatedRoute,
               private projectService: ProjectService){
     this.subscribtion = this.activateRouter.params.subscribe(params => this.idproject = params["idproject"]);
     this.user = JSON.parse(localStorage.getItem("currentUser"));
     console.log(this.user);
+    this.sendIdProject();
+
   }
   ngOnDestroy(){
     this.subscribtion.unsubscribe();
   }
   ngOnInit(){
+    console.log(this.projectAndTagsResponse);
+    console.log(this.projectRequestDto);
+    console.log(this.projectRequestDto);
+  }
+  sendIdProject(){
     this.projectService.sendIdProject(this.idproject)
       .subscribe(
         data => {
-          this.projectAndTagsResponse = data.json();
-        })
+          this.projectAndTagsResponse = data;
+          this.projectRequestDto = this.projectAndTagsResponse.projectRequestDto;
+          console.log(this.projectRequestDto);
+          console.log(this.projectAndTagsResponse);
+        }, error2 => {
+          console.log(error2);
+        });
   }
   switched(tag:string){
     location.href='/searcheResults/'+tag;

@@ -1,7 +1,7 @@
 
 <form id="login-form" #form="ngForm"  (onSubmit)="formReset(form)">
   <div class="form-group" >
-    <input type="text" [(ngModel)]="user.username" name="username" id="username"
+    <input type="text" [(ngModel)]="user.userName" name="username" id="username"
            tabindex="1" class="form-control" #username="ngModel"
     value="" placeholder="{{'Nick'|translate}}" (input)="checkLogin()" required >
     <br>

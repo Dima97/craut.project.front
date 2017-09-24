@@ -28,7 +28,7 @@ export class LoginPageComponent{
   login(data: any) {
     this.loading = true;
     this.errorMessage = null;
-    this.authenticationService.login(this.user.username, this.user.password)
+    this.authenticationService.login(this.user.userName, this.user.password)
       .flatMap(data => {
         return this.authenticationService.getMe();
       })
