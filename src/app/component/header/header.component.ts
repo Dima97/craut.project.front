@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit{
   }
   setLightMode(){
     document.getElementById("bootswatch")
-    .setAttribute("href", "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css");
+    .setAttribute("href", "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css");
   }
   changeMode() {
     if(this.mode) {
