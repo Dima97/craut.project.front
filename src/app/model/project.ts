@@ -11,6 +11,8 @@ export class Project{
   content:string;
   purpose:string;
   money:number;
+  statusEntity:string;
   tags:string[];
   user:number;
+  cash:number;
 }

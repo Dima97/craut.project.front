@@ -5,5 +5,7 @@ display: inline-flex;
   flex-wrap: wrap;
 }
 .container{
-  width:1400px;
+  position: relative;
+  padding: 2%;
+  width:80%;
 }

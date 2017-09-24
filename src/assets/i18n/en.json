@@ -70,5 +70,8 @@
   "Relevant":"By relevant",
   "DateSort":"By date",
   "Sort":"Sort",
-  "Tags":"Tags: "
+  "Tags":"Tags: ",
+  "Status":"Projects status: ",
+  "Cash":"Collected money",
+  "NotSort":"Not sort"
 }
