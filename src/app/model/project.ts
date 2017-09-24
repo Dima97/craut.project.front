@@ -12,4 +12,5 @@ export class Project{
   purpose:string;
   money:number;
   tags:string[];
+  user:number;
 }

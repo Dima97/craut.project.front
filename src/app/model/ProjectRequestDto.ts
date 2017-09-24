@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class ProjectRequestDto{
+  user:number;
   name: string;
   dwy:string;
   image:string;

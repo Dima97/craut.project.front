@@ -14,6 +14,7 @@ export class PayProjectComponent {
   constructor(private projectService:ProjectService){}
 
   sendMoney(){
+    console.log(this.moneyForProject);
     this.projectService.sendMoneyForProject(this.moneyForProject,this.muchMoney).subscribe(data =>{console.log(data)});
   }
 }

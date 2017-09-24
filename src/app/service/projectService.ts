@@ -42,11 +42,11 @@ export class ProjectService extends CoreService{
     return this.http.post(`${this.webService}projectMoney`, JSON.stringify({idProject,money}),{headers})
       .map((response:Response)=>response);
   }
-  sendRating(rating:number,idproject:number){
+  sendRating(rating:number,idproject:number,iduser:number){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME))
-    return this.authHttp.post(`${this.webService}rating`,JSON.stringify({rating,idproject}),{headers})
+    return this.authHttp.post(`${this.webService}rating`,JSON.stringify({rating,idproject,iduser}),{headers})
       .map((response:Response)=>response);
   }
   getProjectByTags(tag:string){
