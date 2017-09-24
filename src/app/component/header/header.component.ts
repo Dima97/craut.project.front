@@ -49,8 +49,6 @@ export class HeaderComponent implements OnInit{
     }
   }
   sendRequest(){
-    return this.headerService.sendSearcheRequest(this.searcheRequest).subscribe(data =>{
-      console.log(data);
-    })
+    location.href = '/searcheResults/searche'+this.searcheRequest;
   }
 }

@@ -13,7 +13,8 @@ import {sendRequest} from "selenium-webdriver/http";
 
 export class SearcheResultComponent implements OnDestroy,OnInit{
   protected projects:Project[] = [];
-  private request:string;
+  protected request:string;
+  protected parseRequest:string;
   private subscribtion:Subscription;
   constructor(private activateRouter: ActivatedRoute,
               private projectService: ProjectService){
@@ -23,11 +24,23 @@ export class SearcheResultComponent implements OnDestroy,OnInit{
     this.subscribtion.unsubscribe();
   }
   ngOnInit(){
-    this.sendRequestByTags(this.request);
+    if(this.request.indexOf("tag",0) != -1) {
+      this.parseRequest = this.request.split("tag",2)[1];
+      console.log(this.parseRequest);
+      this.sendRequestByTags(this.parseRequest);
+    }else {
+      this.sendRequestFromHeader(this.request.split("searche",2)[1]);
+    }
   }
   sendRequestByTags(tag:string){
     this.projectService.getProjectByTags(tag).subscribe(data =>{
       this.projects = data.json();
     });
+  }
+  sendRequestFromHeader(searcheRequest:string){
+    return this.projectService.sendSearcheRequest(searcheRequest).subscribe(data =>{
+      this.projects = data.json();
+        console.log(data);
+      })
   }
 }

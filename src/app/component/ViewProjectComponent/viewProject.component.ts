@@ -7,6 +7,7 @@ import {User} from "../../model/user";
 import {Comments} from "../../model/comments";
 import {ProjectAndTagsRequestDto} from "../../model/ProjectAndTagsRequestDto";
 import {ProjectRequestDto} from "../../model/ProjectRequestDto";
+import {AuthGuard} from "../../service/guards/auth.guards";
 
 
 @Component({
@@ -20,17 +21,22 @@ export class ViewProjectComponent implements OnDestroy,OnInit{
   protected projectAndTagsResponse:ProjectAndTagsRequestDto;
   protected projectRequestDto: ProjectRequestDto;
   protected name:string;
+  protected flag:string;
   protected tags:string[];
   protected idproject:number;
   private user:User = new User();
   private subscribtion:Subscription;
   protected comment:Comments = new Comments();
+  protected authGuard:boolean = true;
 
-
-  constructor(private  router:Router,private activateRouter: ActivatedRoute,
+  constructor(private  router:Router,
+              private activateRouter: ActivatedRoute,
               private projectService: ProjectService){
     this.subscribtion = this.activateRouter.params.subscribe(params => this.idproject = params["idproject"]);
     this.user = JSON.parse(localStorage.getItem("currentUser"));
+    if(this.user == null){
+      this.authGuard = false;
+    }
     console.log(this.user);
     this.sendIdProject();
 
@@ -56,13 +62,16 @@ export class ViewProjectComponent implements OnDestroy,OnInit{
         });
   }
   switched(tag:string){
-    location.href='/searcheResults/'+tag;
+    location.href='/searcheResults/tag'+tag;
   }
   sendComment(data:any){
     this.comment.idproject = this.idproject;
     this.comment.iduser = this.user.id;
     console.log(this.comment);
-    this.projectService.sendComment(this.comment).subscribe(data =>{console.log(data)})
+    this.projectService.sendComment(this.comment).subscribe(data =>{
+      console.log(data);
+
+    });
   }
   rating(rating:number){
     this.projectService.sendRating(rating,this.idproject,this.user.id).subscribe(data =>{console.log(data)})

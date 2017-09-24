@@ -6,6 +6,9 @@
 .label-default{
   font-size: medium;
 }
+.panel-body{
+  background: #cccccc;
+}
 .round {
   border-radius: 100px;
   border: 3px solid green;
@@ -17,10 +20,8 @@
 
 #reviewStars-input {
 
-  /*fix floating problems*/
   overflow: hidden;
   *zoom: 1;
-  /*end of fix floating problems*/
 
   position: relative;
   float: left;
@@ -84,8 +85,25 @@
   position: absolute;
   width: 1140px;
   height:200px;
+  padding: 20px;
 }
 .label-style{
   font-family: Tahoma;
   font-size: medium;
+}
+.sizepan {
+  position: absolute;
+  width: 800px;
+}
+.font{
+  font-weight: 700;
+}
+.name-comment{
+  position: relative;
+  top:15px;
+  font-weight: 800;
+  font-size: 20px
+}
+.table{
+  padding: 20px;
 }

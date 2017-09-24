@@ -1,12 +1,11 @@
-<form #form="ngForm" role="form">
-  <div class="contaner" style="position:relative;top: 80px;">
-    <div class="panel panel-default">
-    <table class="table">
-      <tr *ngFor="let project of projects">
-        <td><img src="{{project.image}}" style="width: 100px; height: 100px;">{{project.name}}</td>
-        <td>{{project.purpose}}{{project.tags}}</td>
-      </tr>
-    </table>
+<form #projectListForm="ngForm" role="form" style="position:relative; top: 85px;">
+  <h1 align="center">{{'SearcheResult'|translate}}{{parseRequest}}</h1>
+  <div class="container">
+    <div class="panel-group">
+      <div *ngFor="let project of projects">
+        <app-contaner-for-project [project] = "project"></app-contaner-for-project>
+      </div>
+    </div>
   </div>
-  </div>
+  <footer></footer>
 </form>

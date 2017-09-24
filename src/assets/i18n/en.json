@@ -73,5 +73,7 @@
   "Tags":"Tags: ",
   "Status":"Projects status: ",
   "Cash":"Collected money",
-  "NotSort":"Not sort"
+  "NotSort":"Not sort",
+  "CommentsTable":"Comments",
+  "SearcheResult":"Searche results: "
 }

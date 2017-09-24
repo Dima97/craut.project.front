@@ -33,7 +33,10 @@ export class ProjectService extends CoreService{
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME))
     return this.authHttp.post(`${this.webService}comment`, JSON.stringify(comment),{headers})
-      .map((response:Response)=>response);
+      .map((response:Response)=>response)
+      .do(data => {
+        location.href="view/project/"+comment.idproject;
+      });
   }
   sendMoneyForProject(idProject:number,money:number){
     let headers = new Headers();
@@ -55,5 +58,8 @@ export class ProjectService extends CoreService{
     headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME))
     return this.authHttp.post(`${this.webService}searcheTag`,JSON.stringify(tag),{headers})
       .map((response:Response)=>response);
+  }
+  sendSearcheRequest(data:string){
+    return this.http.post(`${this.webService}searche`,data).map((response:Response) =>response);
   }
 }

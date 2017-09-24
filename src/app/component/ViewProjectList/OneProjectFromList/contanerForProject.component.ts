@@ -9,4 +9,7 @@ import {Project} from "../../../model/project";
 
 export class ContanerForProjectComponent{
   @Input() project: Project = new Project();
+  redirectToProject(){
+    location.href="view/project/" + this.project.idproject;
+  }
 }

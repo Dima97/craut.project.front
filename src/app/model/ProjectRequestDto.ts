@@ -10,13 +10,6 @@ export class ProjectRequestDto{
   content:string;
   purpose:string;
   money:number;
-  constructor(){
-    this.name = " ";
-    this.image = " ";
-    this.dwy = " ";
-    this.money = 0;
-    this.content = " ";
-    this.purpose = " ";
-    this.rating = 0;
-  }
+  status:string;
+  cash:number;
 }
