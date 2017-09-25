@@ -6,6 +6,7 @@ import {AuthenticationService} from './AuthentificationService';
 import {Observable} from 'rxjs/Observable';
 import {AuthConfigConsts, AuthHttp} from 'angular2-jwt';
 import 'rxjs/add/operator/map';
+import {MessageRequestDto} from "../model/MessageRequestDto";
 
 
 
@@ -46,10 +47,13 @@ export class UserService extends CoreService {
       .map((response: Response) => response);
   }
   sendConfirm(image: string, additionally: string){
+    let message = new MessageRequestDto();
+    message.image = image;
+    message.text = additionally;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
-    return this.http.post(`${this.webService}confirmProfile`, JSON.stringify({image,additionally}), {headers}).
+    return this.http.post(`${this.webService}confirmProfile`, JSON.stringify(message), {headers}).
       map((response:Response) => response);
   }
   updateProfile(user: User) {
