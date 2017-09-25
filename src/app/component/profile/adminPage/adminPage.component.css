@@ -1,11 +1,11 @@
 .table_dark {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 14px;
-  width: 2000px;
+  width: 1400px;
   left:50px;
   text-align: left;
   border-collapse: collapse;
-  background: gray;
+  background:  cornsilk;
   margin: 10px;
 }
 .table_dark th {
