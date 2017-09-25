@@ -9,11 +9,6 @@
 .panel-body{
   background: #cccccc;
 }
-.round {
-  border-radius: 100px;
-  border: 3px solid green;
-  box-shadow: 0 0 7px #666;
-}
 #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
   background: url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png') no-repeat;
 }

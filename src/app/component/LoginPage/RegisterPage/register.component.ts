@@ -42,6 +42,5 @@ export class RegisterComponent {
       error =>{
         console.log(this.errorMessage = error.json().message);
       })
-    // location.href='/';
   }
 }

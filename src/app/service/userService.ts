@@ -19,11 +19,15 @@ export class UserService extends CoreService {
     super();
   }
   register(user: User){
+    user.image = "http://res.cloudinary.com/crowbanding/image/upload/v1505169795/sy6afdedllqhpbh8zebq.jpg";
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
     console.log("registration");
-    return this.http.post(`${this.webService}registration`,user,{headers}).map((response:Response) => response);
+    return this.http.post(`${this.webService}registration`,user,{headers}).map((response:Response) => response).
+    do(data => {
+      location.href='/';
+    });
   }
   blocking(data: number[]){
     console.log(JSON.stringify(data));

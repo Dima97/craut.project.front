@@ -21,16 +21,6 @@ export class ProjectListComponent implements OnInit{
   ngOnInit() {
     this.getSortProject(0);
   }
-  // getSortProject(data: number){
-  //   this.projectService.getProjects(data)
-  //     .subscribe((resp: Response) => {
-  //       console.log(resp);
-  //       for(let index in resp){
-  //         console.log(resp[index]);
-  //         this.projects[index]= resp[index];
-  //       }
-  //     });
-  // }
 
   getSortProject(data: number){
     this.projectService.getProjects(data)
