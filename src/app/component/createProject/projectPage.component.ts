@@ -31,7 +31,6 @@ export class ProjectPageComponent {
     this.project.image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505169254/' + value + '.jpg';
   }
   sendData(value:any){
-    // this.project.image = this.id_image;
     this.project.user = this.user.id;
     this.projectService.sendProjectData(this.project, this.tags).subscribe( error => {
       this.loading = false;
