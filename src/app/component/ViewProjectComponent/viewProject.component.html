@@ -17,6 +17,7 @@
             </div>
           </div>
           </div></div>
+        <div *ngIf="authGuard">
         <div class="row">
           <div class="col-md-6">
         <div id="reviewStars-input" align="center">
@@ -42,10 +43,12 @@
           {{projectRequestDto.rating}}
         </div><br>
           </div>
+
         <div class="col-md-4" align="right">
            <button  class="btn-primary btn" data-toggle="modal"
                    data-target="#openModalTransfer" > {{'Support'|translate}}</button>
         </div>
+          </div>
         <div id="openModalTransfer" class="modal fade" aria-labelledby="openModalTransfer" tabindex="-1" aria-hidden="true" role="dialog"  >
           <app-pay-project [moneyForProject]="idproject"></app-pay-project>
         </div>
