@@ -2,7 +2,6 @@ import { Component} from "@angular/core";
 import {ImageComponent} from "../imageArea/image.component";
 import {Project} from "../../model/project";
 import {ProjectService} from "../../service/projectService";
-import {CalendarComponent} from "./calendar/calendar.component";
 import {DateModel} from "ng2-datepicker";
 import {AuthGuard} from "../../service/guards/auth.guards";
 // import {Tags} from "../../model/tags";
@@ -24,16 +23,15 @@ export class ProjectPageComponent {
   tags:string[];
   errorMessage: string;
   constructor(private projectService:ProjectService,
-              protected calendarComponent:CalendarComponent,
               protected authGuard: AuthGuard) {
-    this.id_image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505210950/azufvfotm2nypj55ebnm.png';
+    this.project.image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505210950/azufvfotm2nypj55ebnm.png';
     this.user = JSON.parse(localStorage.getItem("currentUser"));
   }
   updateImg(value: any) {
-    this.id_image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505169254/' + value + '.jpg';
+    this.project.image = 'http://res.cloudinary.com/crowbanding/image/upload/v1505169254/' + value + '.jpg';
   }
   sendData(value:any){
-    this.project.image = this.id_image;
+    // this.project.image = this.id_image;
     this.project.user = this.user.id;
     this.projectService.sendProjectData(this.project, this.tags).subscribe( error => {
       this.loading = false;

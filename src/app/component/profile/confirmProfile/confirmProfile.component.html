@@ -1,6 +1,7 @@
 <form #form="ngForm" role="form" (submit)="confirmProfile(form.value)">
   <div class="confirm-page">
-    <div class="panel" id="imagearea" >
+    <div class="contaner">
+      <div class="panel" id="imagearea" >
 
       <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="photo">
 
@@ -16,7 +17,7 @@
       </div>
 
       <div>
-        <app-cloudinary (upImgStep)="updateImg($event)"></app-cloudinary>
+        <app-cloudinary style="position:relative; max-width: 500px" (upImgStep)="updateImg($event)"></app-cloudinary>
       </div>
 
     </div>
@@ -28,6 +29,7 @@
     <div align="center" class="createButton">
       <input type="submit" class="createProject" id="create" value="{{'Send'|translate}}">
     </div>
+  </div>
   </div>
   </div>
 </form>

@@ -32,7 +32,6 @@ import {Ng2CloudinaryModule} from "ng2-cloudinary";
 import { FileUploadModule } from 'ng2-file-upload';
 import {CloudinaryComponent} from "./CloudinaryImageComponent/CloudinaryComponent";
 import {ProjectPageComponent} from "./createProject/projectPage.component";
-import {CalendarComponent} from "./createProject/calendar/calendar.component";
 import {DatePickerModule} from "ng2-datepicker";
 import {SuccesRegistrationComponent} from "./succesfulRegistration/succesRegistration.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -73,7 +72,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     ImageComponent,
     CloudinaryComponent,
     ProjectPageComponent,
-    CalendarComponent,
     SuccesRegistrationComponent,
     ConfirmProfileComponent,
     ProjectInfoComponent,
@@ -119,7 +117,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AuthenticationService,
     ValidationData,
     ProjectService,
-    CalendarComponent,
     HeaderService
   ],
   bootstrap: [ AppComponent]
