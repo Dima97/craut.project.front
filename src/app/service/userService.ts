@@ -38,6 +38,16 @@ export class UserService extends CoreService {
     return this.authHttp.post(`${this.webService}block`,JSON.stringify(data),{headers})
       .map((response: Response) => response);
   }
+  confirm(data: number[]){
+    console.log(JSON.stringify(data));
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
+    return this.authHttp.post(`${this.webService}confirmButton`,JSON.stringify(data),{headers})
+      .map((response: Response) => response).do(data => {
+        location.href="/profile";
+      });
+  }
   deleting(data: number[]){
     console.log(JSON.stringify(data));
     let headers = new Headers();
@@ -70,6 +80,12 @@ export class UserService extends CoreService {
   }
   getAll(){
     return this.authHttp.get(`${this.webService}getUsers`).map(res =>res.json());
+  }
+  getMessage(){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', localStorage.getItem(AuthConfigConsts.DEFAULT_TOKEN_NAME));
+    return this.authHttp.get(`${this.webService}getMessage`,{headers}).map(res =>res.json());
   }
 
 }

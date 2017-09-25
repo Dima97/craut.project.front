@@ -43,8 +43,4 @@ export class AdminPageComponent implements OnInit{
     this.userService.blocking(this.blockedList).subscribe(data =>{ console.log(data);})
     this.blockedList.splice(0,1);
   }
-  // delete(){
-  //   console.log(this.blockedList);
-  //   this.userService.deleting(this.blockedList).subscribe(data =>{ console.log(data);})
-  // }
 }

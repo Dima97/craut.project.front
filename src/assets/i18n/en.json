@@ -75,5 +75,13 @@
   "Cash":"Collected money",
   "NotSort":"Not sort",
   "CommentsTable":"Comments",
-  "SearcheResult":"Searche results: "
+  "SearcheResult":"Searche results: ",
+  "Table":"Table users",
+  "MessageConfirm":"Confirm",
+  "Scan": "Scan passport",
+  "Action":"Action",
+  "ConfirmInformation":"Confirm information",
+  "Description":"Description",
+  "UnConfirm":"Unconfirm",
+  "Confirm":"Confirm"
 }
